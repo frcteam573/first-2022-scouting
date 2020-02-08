@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ScoutingApp2019.urls'
+ROOT_URLCONF = 'ScoutingApp2020.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ScoutingApp2019.wsgi.application'
+WSGI_APPLICATION = 'ScoutingApp2020.wsgi.application'
 
 
 # Database
