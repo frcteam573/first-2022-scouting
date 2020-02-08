@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<section class="bar background-image-fixed-1 no-mb color-white">
+<body>
+  
+<form action="/matchscout/" method="POST" class="form-bootstrap modal-like-shadow" enctype="multipart/form-data">
+	{% csrf_token %}
+<h1>Match Scouting Page</h1>
+{# Pre Match Info #}
+<div class="container">
+
+	<h3>Pre Match Info</h3>
+
+	<div class="row">
+	<div class="col-sm-6">
+	Team Number: {{form.team_num}} </div>
+	<div class="col-sm-6">
+	Match Number: {{form.match_num}} </div> </div>
+
+	<div class="row"> <br> </div>
+
+	<div class="row">
+	<div class="col-sm-4">
+	Alliance: {{form.alliance}} </div>
+	<div class="col-sm-4">
+	Starting Level: {{form.starting}} </div>
+	<div class="col-sm-4">
+	Starting Game Piece: {{form.start_piece}}</div></div>
+
+	
+</div>	
+<br>
+<br>
+
+{# During Match Info #}
+	{#Sandstorm Info #}
+
+<div class="container">
+
+	<h3>Sandstorm Info</h3>
+
+	<div class="row">
+	<div class="col-lg-5">
+	<h5>Cargo</h5> </div>
+	<div class="col-lg-2">
+	<h5>Level</h5> </div>
+	<div class="col-lg-5">
+	<h5>Hatch</h5> </div></div>
+
+
+	{# Level 3 #}
+	<div class="row">
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("s_cargo_3")>
+	{{form.s_cargo_3}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("s_cargo_3")> </div>
+	<div class="col-lg-2">
+	<h6>Level 3</h6></div>
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("s_hatches_3")>
+	{{form.s_hatches_3}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("s_hatches_3")></div></div>
+
+
+	{# Level 2 #}	
+	<div class="row">
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("s_cargo_2")>
+	{{form.s_cargo_2}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("s_cargo_2")> </div>
+	<div class="col-lg-2">
+	<h6>Level 2</h6></div>
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("s_hatches_2")>
+	{{form.s_hatches_2}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("s_hatches_2")></div></div>
+
+
+	{# Level 1 #}
+	<div class="row">
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("s_cargo_1")>
+	{{form.s_cargo_1}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("s_cargo_1")> </div>
+	<div class="col-lg-2">
+	<h6>Level 1</h6></div>
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("s_hatches_1")>
+	{{form.s_hatches_1}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("s_hatches_1")></div></div>
+
+</div>
+<br>
+<br>
+
+
+	{# Teleop Info #}
+
+<div class="container border-top">
+
+	<h3>Teleop Info</h3>
+
+	<div class="row">
+	<div class="col-lg-5">
+	<h5>Cargo</h5> </div>
+	<div class="col-lg-2">
+	<h5>Level</h5> </div>
+	<div class="col-lg-5">
+	<h5>Hatch</h5> </div></div>
+<br>
+<br>
+
+	{# Level 3 #}
+	<div class="row">
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_cargo_3")>
+	{{form.t_cargo_3}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_cargo_3")> </div>
+	<div class="col-lg-2">
+	<h6>Level 3</h6></div>
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_hatches_3")>
+	{{form.t_hatches_3}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_hatches_3")></div></div>
+
+
+	{# Level 2 #}	
+	<div class="row">
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_cargo_2")>
+	{{form.t_cargo_2}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_cargo_2")> </div>
+	<div class="col-lg-2">
+	<h6>Level 2</h6></div>
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_hatches_2")>
+	{{form.t_hatches_2}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_hatches_2")></div></div>
+
+
+	{# Level 1 #}
+	<div class="row">
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_cargo_1")>
+	{{form.t_cargo_1}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_cargo_1")> </div>
+	<div class="col-lg-2">
+	<h6>Level 1</h6></div>
+	<div class="col-lg-5">
+		<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_hatches_1")>
+	{{form.t_hatches_1}}
+		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_hatches_1")></div></div>
+
+</div>
+
+<br>
+<br>
+
+{# Post Match Info #}
+<div class="container">
+	<div class="row">
+	<h3>Post Match Info</h3></div>
+	<div class="row">
+	<div class="col-sm-4">
+	Ending position: {{form.ending}}</div></div>
+	<br>
+	
+	<div class="row">
+	<div class="col-sm-4">
+	Scouter Name: {{form.name}}</div></div>
+	<br>
+
+	<div class="row">
+	<div class="col-sm-12">
+	Comments: {{form.comments}}</div></div>
+
+
+
+
+<button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+<img src='{% static "img/minus.jpg" %}' class=plusminus onclick=minus("score")>
+<img src='{% static "img/plus.jpg" %}' class=plusminus onclick=plus("score")>
+{# We need to add data #}
+
+</body>
+</section>
+{% endblock %}
+

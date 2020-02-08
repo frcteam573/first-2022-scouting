@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<section class="bar background-image-fixed-1 no-mb color-white">
+<body>
+<form action="/pitscout/" method="POST" class="form-bootstrap modal-like-shadow" enctype="multipart/form-data">
+	{% csrf_token %}
+
+<h1>Pit Scouting Page</h1>
+
+
+<div class="container">
+	<h3> Pre Match & Sandstorm </h3>
+	<div class="row">
+	<div class="col-sm-6">
+	Team Number: {{form.team_num}} </div>
+	</div>
+</div>
+<br>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6">
+	Drivetrain type: {{form.drivetrain}}</div></div>
+</div>
+<br>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6">
+	Start on level 2? {{form.platform_start}}</div></div>
+</div>
+<br>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6">
+	Autonomous? {{form.auton}}</div>
+	<div class="col-sm-6">
+	Camera vision back to drivers station? {{form.camerafeed}}</div></div>
+</div>
+
+
+<br>
+<div class="container border-top">
+	<h3> Teleop </h3>
+	<div class="row">
+	<div class="col-sm-6">
+	Disk intake: {{form.disk}}</div>
+	<div class="col-sm-6">
+	Ball intake: {{form.ball}}</div></div>
+	<div class="row">
+	<div class="col-sm-6">
+	Above ground level scoring? {{form.above_ground}}</div></div>
+	<div class="row">
+	<div class="col-sm-12">
+	Priority regarding scoring: {{form.scoring_priority}}</div></div>
+</div>
+
+
+<br>
+<div class="container border-top">
+	<h3> End of Match </h3>
+	<div class="row">
+	<div class="col-sm-3">
+	Ending level {{form.platform_end}}</div>
+	<div class="col-sm-6">
+	Time to get on platform (in seconds)  {{form.climb_time}}</div></div>
+</div>
+
+
+<br>
+<div class="container border-top">
+	<h3> Other </h3>
+	<div class="row">
+	<div class="col-sm-6">
+	Main strength: {{form.strength}}</div></div>
+	<div class="row">
+	<div class="col-sm-6">
+	Comments: {{form.comments}}</div>
+	<div class="col-sm-6">
+	Scouter Name: {{form.name}}</div></div>
+</div>
+
+<button class="btn btn-primary" type="submit">Save</button>
+</form>
+</body>
+</section>
+{% endblock %}
+
