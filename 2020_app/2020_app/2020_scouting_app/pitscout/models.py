@@ -9,38 +9,38 @@ class pitscout(models.Model):
 	drivetrain = models.CharField(max_length = 20, choices = drivetrain_types, default = 'Other')
 
 	start_location_ls = (('Zone 1','Zone 1'),('Zone 2','Zone 2'), ('Zone 3', 'Zone 3'), ('Zone 4', 'Zone 4'), ('Zone 5', 'Zone 5'))
-	start_location = models.CharField(max_length = 6, choices = start_location, default = 'Zone 1')
+	start_location = models.CharField(max_length = 6, choices = start_location_ls, default = 'Zone 1')
 
 	yesno = ((1, 'Yes'), (0, 'No'))
 
-	a_crossline = models.IntegerField(choices = yesno, default = 'No')
+	a_crossline = models.IntegerField(choices = yesno, default = 0)
 
-	a_goal_ls = (('upper', 'upper'), ('lower', 'lower'), ('inner, inner'))
+	a_goal_ls = (('upper', 'upper'), ('lower', 'lower'), ('inner', 'inner'))
 	a_goal = models.IntegerField(choices = a_goal_ls, default = 'upper')
 
 	a_ballscore =  models.IntegerField(default = 0)
 
 #goals
 
-	t_lowergoal = models.IntegerField(choices = yesno, default = 'No')
-	t_uppergoal = models.IntegerField(choices = yesno, default = 'No')
-	t_innergoal = models.IntegerField(choices = yesno, default = 'No')
+	t_lowergoal = models.IntegerField(choices = yesno, default = 0)
+	t_uppergoal = models.IntegerField(choices = yesno, default = 0)
+	t_innergoal = models.IntegerField(choices = yesno, default = 0)
 
 #ball intake 
 
-	t_humanplayer = models.IntegerField(choices = yesno, default = 'No')
-	t_ground = models.IntegerField(choices = yesno, default = 'No')
+	t_humanplayer = models.IntegerField(choices = yesno, default = 0)
+	t_ground = models.IntegerField(choices = yesno, default = 0)
 
 #color wheel
 
-	t_adjustment = models.IntegerField(choices = yesno, default = 'No')
-	t_sensors = models.IntegerField(choices = yesno, default = 'No')
+	t_adjustment = models.IntegerField(choices = yesno, default = 0)
+	t_sensors = models.IntegerField(choices = yesno, default = 0)
 
 #climb
 
-	t_climb = models.IntegerField(choices = yesno, default = 'No')
-	t_buddyclimb = models.IntegerField(choices = yesno, default = 'No')
-	t_useofours = models.IntegerField(choices = yesno, default = 'No')
+	t_climb = models.IntegerField(choices = yesno, default = 0)
+	t_buddyclimb = models.IntegerField(choices = yesno, default = 0)
+	t_useofours = models.IntegerField(choices = yesno, default = 0)
 
 	t_time = models.IntegerField(default = 0)
 

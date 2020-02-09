@@ -14,73 +14,215 @@
 
 
 <div class="container">
-	<h3> Pre Match & Sandstorm </h3>
+	<h3> Pre Match </h3>
 	<div class="row">
 	<div class="col-sm-6">
 	Team Number: {{form.team_num}} </div>
 	</div>
-</div>
-<br>
-<div class="container">
+	<br>
 	<div class="row">
 	<div class="col-sm-6">
-	Drivetrain type: {{form.drivetrain}}</div></div>
+		Drivetrain type: {{form.drivetrain}}
+</div>
 </div>
 <br>
-<div class="container">
-	<div class="row">
+<div class="row">
 	<div class="col-sm-6">
-	Start on level 2? {{form.platform_start}}</div></div>
+		Scouter Name: {{form.name}}
+</div>
+</div>
 </div>
 <br>
-<div class="container">
-	<div class="row">
-	<div class="col-sm-6">
-	Autonomous? {{form.auton}}</div>
-	<div class="col-sm-6">
-	Camera vision back to drivers station? {{form.camerafeed}}</div></div>
-</div>
 
+	{# Autonomous Info #}
 
-<br>
 <div class="container border-top">
-	<h3> Teleop </h3>
+	<h3> Autonomous </h3>
+
 	<div class="row">
 	<div class="col-sm-6">
-	Disk intake: {{form.disk}}</div>
+		<h6>Cross Line: {{form.a_crossline}}</h6>
+
 	<div class="col-sm-6">
-	Ball intake: {{form.ball}}</div></div>
-	<div class="row">
+		<h6>Scoring Goal:{{form.a_goal}}</h6>
+
 	<div class="col-sm-6">
-	Above ground level scoring? {{form.above_ground}}</div></div>
-	<div class="row">
-	<div class="col-sm-12">
-	Priority regarding scoring: {{form.scoring_priority}}</div></div>
+		<h6>Number Balls:{{form.a_ballscore}}</h6>
 </div>
-
-
 <br>
+
+	{# Teleop Info #}
+
 <div class="container border-top">
-	<h3> End of Match </h3>
+	<h3>Teleop Info</h3>
+
+	{# Level 2 #}
+
 	<div class="row">
-	<div class="col-sm-3">
-	Ending level {{form.platform_end}}</div>
-	<div class="col-sm-6">
-	Time to get on platform (in seconds)  {{form.climb_time}}</div></div>
-</div>
+	<div class="col-lg-5">
+		<h6>Goals</h6></div>
+
+	<div class="row">
+	<div class="col-lg-5">
+		<h6>Ball Intake</h6></div>
+	</div>
+
+{# Goals/Ball Intake #}
+
+	<head>
+    <style>
+    {
+        box-sizing: border-box;
+    }
+    /* Set additional styling options for the columns*/
+    .column {
+    float: left;
+    width: 50%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    </style>
+
+	<!-- <div class="container">
+
+	<div class="col-lg-5">
+			<h6>Lower: {{form.t_lowergoal}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Upper: {{form.t_uppergoal}}</h6>
+	</div>
 
 
+	<div class="col-lg-5">
+			<h6>Inner: {{form.t_innergoal}}</h6>
+	</div><br>
+	
+
+	<div class="col-lg-5">
+			<h6>Human Player: {{form.t_humanplayer}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Ground: {{form.t_ground}}</h6>
+	</div>
+	<br> -->
+
+	<!--<body>
+    <div class="row">
+        <div class="column">
+            <h6>Goals</h6>
+            <p><div class="col-lg-5">
+			<h6>Lower: {{form.t_lowergoal}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Upper: {{form.t_uppergoal}}</h6>
+	</div>
+
+
+	<div class="col-lg-5">
+			<h6>Inner: {{form.t_innergoal}}</h6>
+	</div><br></p>
+        </div>
+        <div class="column">
+            <h6>Ball Intake</h6>
+            <p><div class="col-lg-5">
+			<h6>Human Player: {{form.t_humanplayer}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Ground: {{form.t_ground}}</h6>
+	</div>
+	<br></p>
+        </div>
+    </div>-->
+
+    <body>
+    <div class="row">
+        <div class="column">
+            <!--h6>Column 1</h6>-->
+            <p><div class="col-lg-5">
+			<h6>Lower: {{form.t_lowergoal}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Upper: {{form.t_uppergoal}}</h6>
+	</div>
+
+
+	<div class="col-lg-5">
+			<h6>Inner: {{form.t_innergoal}}</h6>
+	</div><br></p>
+
+
+        </div>
+        <div class="column">
+            <!--<h6>Column 2</h6>-->
+            <p><div class="col-lg-5">
+			<h6>Human Player: {{form.t_humanplayer}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Ground: {{form.t_ground}}</h6>
+	</div>
+	<br></p>
+        </div>
+    </div>
+
+{# Level 1 #}
+
+	<div class="row">
+	<div class="col-lg-5">
+		<h6>Color Wheel</h6></div>
+
+	<div class="row">
+	<div class="col-lg-5">
+		<h6>Climb</h6></div>
+	</div>
+
+{# Color Wheel/Climb #}
+
+	<div class="row">
+	<div class="col-lg-5">
+			<h6>Adjustment: {{form.t_adjustment}}</h6>
+
+	<div class="row">
+	<div class="col-lg-5">
+			<h6>Sensors: {{form.t_sensor}}</h6>
+	</div>
+	<br>
+
+	<div class="col-lg-5">
+			<h6>Climb: {{form.t_climb}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Buddy Climb: {{form.t_buddyclimb}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Open To Using Ours: {{form.t_useofours}}</h6>
+	</div>
+
+	<div class="col-lg-5">
+			<h6>Time: {{form.t_time}}</h6>
+	</div>
 <br>
+
 <div class="container border-top">
 	<h3> Other </h3>
 	<div class="row">
 	<div class="col-sm-6">
-	Main strength: {{form.strength}}</div></div>
+	MainStrength: {{form.strength}}</div></div>
+
 	<div class="row">
 	<div class="col-sm-6">
 	Comments: {{form.comments}}</div>
-	<div class="col-sm-6">
-	Scouter Name: {{form.name}}</div></div>
 </div>
 
 <button class="btn btn-primary" type="submit">Save</button>
