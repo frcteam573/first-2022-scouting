@@ -20,13 +20,13 @@
 {% if forloop.first %}
     <h3>Team {{result.team_num}} Summary</h3>
     <br>
-    {# Sandstorm stats #}
+    {# Autonomous stats #}
     <div class="container">
-		<h5> Sandstorm</h5>
+		<h5> Autonomous </h5>
 		<table class="table table-hover">
 	            <thead>
 	                <tr>
-	                    <th>Hatches</th>
+	                    <th>Balls Scored</th>
 	                    <th>Average</th>                  
 	                    <th>Max</th>
 	                    <th>Min</th>
@@ -36,21 +36,26 @@
 	            <tbody>
 	            	<tr>
 	                <td> Level 1</td>
-	                <td> {{s_hatches_1_avg}}</td>            
-	                <td> {{s_hatches_1_max}}</td>
-	                <td> {{s_hatches_1_min}}</td>
+	                <td> {{a_inner_avg}}</td>            
+	                <td> {{a_inner_max}}</td>
+	                <td> {{a_inner_min}}</td>
 	                </tr>
 	                <tr>
 	                <td> Level 2</td>
-	                <td> {{s_hatches_2_avg}}</td>            
-	                <td> {{s_hatches_2_max}}</td>
-	                <td> {{s_hatches_2_min}}</td>
+	                <td> {{a_outer_avg}}</td>            
+	                <td> {{a_outer_max}}</td>
+	                <td> {{a_outer_min}}</td>
 	            	</tr>
 	            	<tr>
 	            	<td> Level 3</td>
-	            	<td> {{s_hatches_3_avg}}</td>            
-	            	<td> {{s_hatches_3_max}}</td>
-	                <td> {{s_hatches_3_min}}</td>
+	            	<td> {{a_upper_avg}}</td>            
+	            	<td> {{a_upper_max}}</td>
+	                <td> {{a_upper_min}}</td>
+	            	</tr>
+	            	<tr>
+	            	<td> Level 3</td>
+	            	<td> {{a_crossline_avg}}</td>            
+
 	            </tbody>
 	            <thead>
 	            	<tr>

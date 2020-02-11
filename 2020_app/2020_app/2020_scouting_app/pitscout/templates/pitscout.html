@@ -42,12 +42,16 @@
 	<div class="row">
 	<div class="col-sm-6">
 		<h6>Cross Line: {{form.a_crossline}}</h6>
+	<br>
 
+	<div class="row">
 	<div class="col-sm-6">
-		<h6>Scoring Goal:{{form.a_goal}}</h6>
+		<h6>Scoring Goal: {{form.a_goal}}</h6>
+	<br>
 
+	<div class="row">
 	<div class="col-sm-6">
-		<h6>Number Balls:{{form.a_ballscore}}</h6>
+		<h6>Number Balls: {{form.a_ballscore}}</h6>
 </div>
 <br>
 
@@ -60,11 +64,11 @@
 
 	<div class="row">
 	<div class="col-lg-5">
-		<h6>Goals</h6></div>
+		<h5>Goals</h5></div>
 
 	<div class="row">
 	<div class="col-lg-5">
-		<h6>Ball Intake</h6></div>
+		<h5>Ball Intake</h5></div>
 	</div>
 
 {# Goals/Ball Intake #}
@@ -87,65 +91,9 @@
     }
     </style>
 
-	<!-- <div class="container">
-
-	<div class="col-lg-5">
-			<h6>Lower: {{form.t_lowergoal}}</h6>
-	</div>
-
-	<div class="col-lg-5">
-			<h6>Upper: {{form.t_uppergoal}}</h6>
-	</div>
-
-
-	<div class="col-lg-5">
-			<h6>Inner: {{form.t_innergoal}}</h6>
-	</div><br>
-	
-
-	<div class="col-lg-5">
-			<h6>Human Player: {{form.t_humanplayer}}</h6>
-	</div>
-
-	<div class="col-lg-5">
-			<h6>Ground: {{form.t_ground}}</h6>
-	</div>
-	<br> -->
-
-	<!--<body>
-    <div class="row">
-        <div class="column">
-            <h6>Goals</h6>
-            <p><div class="col-lg-5">
-			<h6>Lower: {{form.t_lowergoal}}</h6>
-	</div>
-
-	<div class="col-lg-5">
-			<h6>Upper: {{form.t_uppergoal}}</h6>
-	</div>
-
-
-	<div class="col-lg-5">
-			<h6>Inner: {{form.t_innergoal}}</h6>
-	</div><br></p>
-        </div>
-        <div class="column">
-            <h6>Ball Intake</h6>
-            <p><div class="col-lg-5">
-			<h6>Human Player: {{form.t_humanplayer}}</h6>
-	</div>
-
-	<div class="col-lg-5">
-			<h6>Ground: {{form.t_ground}}</h6>
-	</div>
-	<br></p>
-        </div>
-    </div>-->
-
     <body>
     <div class="row">
         <div class="column">
-            <!--h6>Column 1</h6>-->
             <p><div class="col-lg-5">
 			<h6>Lower: {{form.t_lowergoal}}</h6>
 	</div>
@@ -162,9 +110,8 @@
 
         </div>
         <div class="column">
-            <!--<h6>Column 2</h6>-->
             <p><div class="col-lg-5">
-			<h6>Human Player: {{form.t_humanplayer}}</h6>
+			<h6>HumanPlayer: {{form.t_humanplayer}}</h6>
 	</div>
 
 	<div class="col-lg-5">
@@ -178,41 +125,65 @@
 
 	<div class="row">
 	<div class="col-lg-5">
-		<h6>Color Wheel</h6></div>
+		<h5>Color Wheel</h5></div>
 
 	<div class="row">
 	<div class="col-lg-5">
-		<h6>Climb</h6></div>
+		<h5>Climb</h5></div>
 	</div>
 
-{# Color Wheel/Climb #}
+	{# Level 2 #}
 
-	<div class="row">
-	<div class="col-lg-5">
+	<head>
+    <style>
+    {
+        box-sizing: border-box;
+    }
+    /* Set additional styling options for the columns*/
+    .column {
+    float: left;
+    width: 50%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    </style>
+
+    <body>
+    <div class="row">
+        <div class="column">
+            <p><div class="col-lg-5">
 			<h6>Adjustment: {{form.t_adjustment}}</h6>
-
-	<div class="row">
-	<div class="col-lg-5">
-			<h6>Sensors: {{form.t_sensor}}</h6>
-	</div>
-	<br>
-
-	<div class="col-lg-5">
-			<h6>Climb: {{form.t_climb}}</h6>
 	</div>
 
 	<div class="col-lg-5">
-			<h6>Buddy Climb: {{form.t_buddyclimb}}</h6>
+			<h6>Sensors: {{form.t_sensors}}</h6>
+	</div>
+
+
+        </div>
+        <div class="column">
+            <p><div class="col-lg-5">
+			<h6>BuddyClimb: {{form.t_buddyclimb}}</h6>
 	</div>
 
 	<div class="col-lg-5">
-			<h6>Open To Using Ours: {{form.t_useofours}}</h6>
+			<h6>OpenToUsingOurs?: {{form.t_useofours}}</h6>
 	</div>
+	<br></p>
+    </div>
+    </div>
+    <br>
+
+{# Level 1 #}
+
 
 	<div class="col-lg-5">
 			<h6>Time: {{form.t_time}}</h6>
 	</div>
-<br>
 
 <div class="container border-top">
 	<h3> Other </h3>

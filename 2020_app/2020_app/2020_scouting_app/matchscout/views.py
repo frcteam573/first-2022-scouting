@@ -29,64 +29,45 @@ def teamsummary(request):
 
 		if team_number != 0:
 		
-			#Sandstorm
-			s_hatches_1_avg = round(list(results.aggregate(Avg('s_hatches_1')).values())[0], 2)
-			s_hatches_1_max = round(list(results.aggregate(Max('s_hatches_1')).values())[0], 2)
-			s_hatches_1_min = round(list(results.aggregate(Min('s_hatches_1')).values())[0], 2)
+			#autonomous
+			a_outer_avg = round(list(results.aggregate(Avg('a_outer')).values())[0], 2)
+			a_outer_max = round(list(results.aggregate(Max('a_outer')).values())[0], 2)
+			a_outer_min = round(list(results.aggregate(Min('a_outer')).values())[0], 2)
 
-			s_cargo_1_avg = round(list(results.aggregate(Avg('s_cargo_1')).values())[0], 2)
-			s_cargo_1_max = round(list(results.aggregate(Max('s_cargo_1')).values())[0], 2)
-			s_cargo_1_min = round(list(results.aggregate(Min('s_cargo_1')).values())[0], 2)
+			a_inner_avg = round(list(results.aggregate(Avg('a_inner')).values())[0], 2)
+			a_inner_max = round(list(results.aggregate(Max('a_inner')).values())[0], 2)
+			a_inner_min = round(list(results.aggregate(Min('a_inner')).values())[0], 2)
 
-			s_hatches_2_avg = round(list(results.aggregate(Avg('s_hatches_2')).values())[0], 2)
-			s_hatches_2_max = round(list(results.aggregate(Max('s_hatches_2')).values())[0], 2)
-			s_hatches_2_min = round(list(results.aggregate(Min('s_hatches_2')).values())[0], 2)
-
-			s_cargo_2_avg = round(list(results.aggregate(Avg('s_cargo_2')).values())[0], 2)
-			s_cargo_2_max = round(list(results.aggregate(Max('s_cargo_2')).values())[0], 2)
-			s_cargo_2_min = round(list(results.aggregate(Min('s_cargo_2')).values())[0], 2)
-
-			s_hatches_3_avg = round(list(results.aggregate(Avg('s_hatches_3')).values())[0], 2)
-			s_hatches_3_max = round(list(results.aggregate(Max('s_hatches_3')).values())[0], 2)
-			s_hatches_3_min = round(list(results.aggregate(Min('s_hatches_3')).values())[0], 2)
-
-			s_cargo_3_avg = round(list(results.aggregate(Avg('s_cargo_3')).values())[0], 2)
-			s_cargo_3_max = round(list(results.aggregate(Max('s_cargo_3')).values())[0], 2)
-			s_cargo_3_min = round(list(results.aggregate(Min('s_cargo_3')).values())[0], 2)
+			a_lower_avg = round(list(results.aggregate(Avg('a_lower')).values())[0], 2)
+			a_lower_max = round(list(results.aggregate(Max('a_lower')).values())[0], 2)
+			a_lower_min = round(list(results.aggregate(Min('a_lower')).values())[0], 2)
+			
+			a_crossline_avg = round(list(results.aggregate(Avg('a_crossline')).values())[0], 2)
 
 			
-			
-
 			#Teleop
-			t_hatches_1_avg = round(list(results.aggregate(Avg('t_hatches_1')).values())[0], 2)
-			t_hatches_1_max = round(list(results.aggregate(Max('t_hatches_1')).values())[0], 2)
-			t_hatches_1_min = round(list(results.aggregate(Min('t_hatches_1')).values())[0], 2)
 
-			t_cargo_1_avg = round(list(results.aggregate(Avg('t_cargo_1')).values())[0], 2)
-			t_cargo_1_max = round(list(results.aggregate(Max('t_cargo_1')).values())[0], 2)
-			t_cargo_1_min = round(list(results.aggregate(Min('t_cargo_1')).values())[0], 2)
+			a_outer_avg = round(list(results.aggregate(Avg('a_outer')).values())[0], 2)
+			a_outer_max = round(list(results.aggregate(Max('a_outer')).values())[0], 2)
+			a_outer_min = round(list(results.aggregate(Min('a_outer')).values())[0], 2)
 
-			t_hatches_2_avg = round(list(results.aggregate(Avg('t_hatches_2')).values())[0], 2)
-			t_hatches_2_max = round(list(results.aggregate(Max('t_hatches_2')).values())[0], 2)
-			t_hatches_2_min = round(list(results.aggregate(Min('t_hatches_2')).values())[0], 2)
+			a_inner_avg = round(list(results.aggregate(Avg('a_inner')).values())[0], 2)
+			a_inner_max = round(list(results.aggregate(Max('a_inner')).values())[0], 2)
+			a_inner_min = round(list(results.aggregate(Min('a_inner')).values())[0], 2)
 
-			t_cargo_2_avg = round(list(results.aggregate(Avg('t_cargo_2')).values())[0], 2)
-			t_cargo_2_max = round(list(results.aggregate(Max('t_cargo_2')).values())[0], 2)
-			t_cargo_2_min = round(list(results.aggregate(Min('t_cargo_2')).values())[0], 2)
+			a_lower_avg = round(list(results.aggregate(Avg('a_lower')).values())[0], 2)
+			a_lower_max = round(list(results.aggregate(Max('a_lower')).values())[0], 2)
+			a_lower_min = round(list(results.aggregate(Min('a_lower')).values())[0], 2)
 
-			t_hatches_3_avg = round(list(results.aggregate(Avg('t_hatches_3')).values())[0], 2)
-			t_hatches_3_max = round(list(results.aggregate(Max('t_hatches_3')).values())[0], 2)
-			t_hatches_3_min = round(list(results.aggregate(Min('t_hatches_3')).values())[0], 2)
+			a_positioncontrol_avg = round(list(results.aggregate(Avg('a_positioncontrol')).values())[0], 2)
 
-			t_cargo_3_avg = round(list(results.aggregate(Avg('t_cargo_3')).values())[0], 2)
-			t_cargo_3_max = round(list(results.aggregate(Max('t_cargo_3')).values())[0], 2)
-			t_cargo_3_min = round(list(results.aggregate(Min('t_cargo_3')).values())[0], 2)
-			
-		
-		
-		
+			a_rotationcontrol_avg = round(list(results.aggregate(Avg('a_rotationcontrol')).values())[0], 2)
 
-		
+			a_climb_avg = round(list(results.aggregate(Avg('a_climb')).values())[0], 2)
+
+			a_level_avg = round(list(results.aggregate(Avg('a_level')).values())[0], 2)
+
+			a_buddy_avg = round(list(results.aggregate(Avg('a_buddy')).values())[0], 2)
 
 			level_1 = round(results.filter(ending=1).count()/results.count() * 100, 2)
 			level_2 = round(results.filter(ending=2).count()/results.count() * 100, 2)
@@ -98,6 +79,6 @@ def teamsummary(request):
 		else:
 			search_run = False
 			return render(request, 'teamsummary.html', {'search_run':search_run})
-	else:
+		else:
 		search_run = False
 		return render(request, 'teamsummary.html', {'search_run':search_run}) 
