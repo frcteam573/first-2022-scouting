@@ -16,7 +16,7 @@ class pitscout(models.Model):
 	a_crossline = models.IntegerField(choices = yesno, default = 0)
 
 	a_goal_ls = (('upper', 'upper'), ('lower', 'lower'), ('inner', 'inner'))
-	a_goal = models.IntegerField(choices = a_goal_ls, default = 'upper')
+	a_goal = models.CharField(max_length = 5, choices = a_goal_ls, default = 'upper')
 
 	a_ballscore =  models.IntegerField(default = 0)
 

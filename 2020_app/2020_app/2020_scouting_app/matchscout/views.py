@@ -30,9 +30,9 @@ def teamsummary(request):
 		if team_number != 0:
 		
 			#autonomous
-			a_outer_avg = round(list(results.aggregate(Avg('a_outer')).values())[0], 2)
-			a_outer_max = round(list(results.aggregate(Max('a_outer')).values())[0], 2)
-			a_outer_min = round(list(results.aggregate(Min('a_outer')).values())[0], 2)
+			a_upper_avg = round(list(results.aggregate(Avg('a_upper')).values())[0], 2)
+			a_upper_max = round(list(results.aggregate(Max('a_upper')).values())[0], 2)
+			a_upper_min = round(list(results.aggregate(Min('a_upper')).values())[0], 2)
 
 			a_inner_avg = round(list(results.aggregate(Avg('a_inner')).values())[0], 2)
 			a_inner_max = round(list(results.aggregate(Max('a_inner')).values())[0], 2)
@@ -47,9 +47,9 @@ def teamsummary(request):
 			
 			#Teleop
 
-			a_outer_avg = round(list(results.aggregate(Avg('a_outer')).values())[0], 2)
-			a_outer_max = round(list(results.aggregate(Max('a_outer')).values())[0], 2)
-			a_outer_min = round(list(results.aggregate(Min('a_outer')).values())[0], 2)
+			a_upper_avg = round(list(results.aggregate(Avg('a_upper')).values())[0], 2)
+			a_upper_max = round(list(results.aggregate(Max('a_upper')).values())[0], 2)
+			a_upper_min = round(list(results.aggregate(Min('a_upper')).values())[0], 2)
 
 			a_inner_avg = round(list(results.aggregate(Avg('a_inner')).values())[0], 2)
 			a_inner_max = round(list(results.aggregate(Max('a_inner')).values())[0], 2)
@@ -79,6 +79,3 @@ def teamsummary(request):
 		else:
 			search_run = False
 			return render(request, 'teamsummary.html', {'search_run':search_run})
-		else:
-		search_run = False
-		return render(request, 'teamsummary.html', {'search_run':search_run}) 
