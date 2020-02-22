@@ -12,7 +12,8 @@
 
 <h1>Pit Scouting Page</h1>
 
-
+	{{ form.errors }}
+	{{ form.non_field_errors }}
 <div class="container">
 	<h3> Pre Match </h3>
 	<div class="row">
@@ -52,11 +53,6 @@
 	<div class="row">
 	<div class="col-sm-6">
 		<h6>Number Balls: {{form.a_ballscore}}</h6>
-
-	<br>
-	<div class="row">
-	<div class="col-sm-6">
-		<h6>Start Location: {{form.start_location}}</h6>
 </div>
 <br>
 
@@ -170,10 +166,6 @@
 
 
         </div>
-
-    <div class="col-lg-5">
-			<h6>Climb: {{form.t_climb}}</h6>
-	</div>
         <div class="column">
             <p><div class="col-lg-5">
 			<h6>BuddyClimb: {{form.t_buddyclimb}}</h6>

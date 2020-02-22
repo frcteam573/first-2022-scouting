@@ -26,7 +26,7 @@
 		<table class="table table-hover">
 	            <thead>
 	                <tr>
-	                    <th>Balls Scored</th>
+	                    <th> </th>
 	                    <th>Average</th>                  
 	                    <th>Max</th>
 	                    <th>Min</th>
@@ -35,25 +35,25 @@
 
 	            <tbody>
 	            	<tr>
-	                <td> Level 1</td>
+	                <td> Upper </td>
+	                <td> {{a_upper_avg}}</td>            
+	                <td> {{a_upper_max}}</td>
+	                <td> {{a_upper_min}}</td>
+	                </tr>
+	                <tr>
+	                <td> Inner </td>
 	                <td> {{a_inner_avg}}</td>            
 	                <td> {{a_inner_max}}</td>
 	                <td> {{a_inner_min}}</td>
-	                </tr>
-	                <tr>
-	                <td> Level 2</td>
-	                <td> {{a_outer_avg}}</td>            
-	                <td> {{a_outer_max}}</td>
-	                <td> {{a_outer_min}}</td>
 	            	</tr>
 	            	<tr>
-	            	<td> Level 3</td>
-	            	<td> {{a_upper_avg}}</td>            
-	            	<td> {{a_upper_max}}</td>
-	                <td> {{a_upper_min}}</td>
+	            	<td> Lower </td>
+	            	<td> {{a_lower_avg}}</td>            
+	            	<td> {{a_lower_max}}</td>
+	                <td> {{a_lower_min}}</td>
 	            	</tr>
 	            	<tr>
-	            	<td> Level 3</td>
+	            	<td> Crossline</td>
 	            	<td> {{a_crossline_avg}}</td>            
 
 	            </tbody>
@@ -73,6 +73,7 @@
 	            </tbody>
 	            <thead>
 	            	<tr>
+	            		<th> </th>
 	            		<th>Average</th>
 	            		<th>Max</th>
 	            		<th>Min</th>
@@ -81,36 +82,42 @@
 
 	            <tbody>
 	            	<tr>
-	                <td> Level 1</td>
+	                <td> Upper </td>
+	                <td> {{t_upper_avg}}</td>            
+	                <td> {{t_upper_max}}</td>
+	                <td> {{t_upper_min}}</td>
+	                </tr>
+	                <tr>
+	                <td> Inner </td>
 	                <td> {{t_inner_avg}}</td>            
 	                <td> {{t_inner_max}}</td>
 	                <td> {{t_inner_min}}</td>
-	                </tr>
-	                <tr>
-	                <td> Level 2</td>
-	                <td> {{t_outer_avg}}</td>            
-	                <td> {{t_outer_max}}</td>
-	                <td> {{t_outer_min}}</td>
 	            	</tr>
 	            	<tr>
-	            	<td> Level 3</td>
-	            	<td> {{t_upper_avg}}</td>            
-	            	<td> {{t_upper_max}}</td>
-	                <td> {{t_upper_min}}</td>
+	            	<td> Lower </td>
+	            	<td> {{t_lower_avg}}</td>            
+	            	<td> {{t_lower_max}}</td>
+	                <td> {{t_lower_min}}</td>
 	            	</tr>
 	            	<tr>
-	            	<td> Level 3</td>
-	            	<td> {{t_positioncontrol_avg}}</td>            
-
-	            	<td> Level 3</td>
-	            	<td> {{t_rotationcontrol_avg}}</td> 
-
-	            	<td> Level 3</td>
-	            	<td> {{t_climb_avg}}</td>           
-	            	<td> Level 3</td>
-	            	<td> {{t_level_avg}}</td>
-	            	<td> Level 3</td>
-	            	<td> {{t_buddy_avg}}</td>
+	            	<td> Position Control</td>
+	            	<td> {{positioncontrol_avg}}</td>            
+	            	</tr>
+	            	<td> Rotational Control</td>
+	            	<td> {{rotationcontrol_avg}}</td> 
+	            	</tr>
+	            	<tr>
+	            	<td> Climb </td>
+	            	<td> {{climb_avg}}</td> 
+	            	</tr>  
+	            	<tr>        
+	            	<td> Level Climb </td>
+	            	<td> {{level_avg}}</td>
+	            	</tr>
+	            	<tr>
+	            	<td> Buddy Climb </td>
+	            	<td> {{buddy_avg}}</td>
+	            	</tr>
 
 	            </tbody>
 	            <thead>
@@ -119,12 +126,13 @@
 	            </tbody>
 	        </table>
 		
-		<h6>End on Level 1: {{level_1}}%</h6>
+		<!--<h6>End on Level 1: {{level_1}}%</h6>
 		<h6>End on Level 2: {{level_2}}%</h6>
-		<h6>End on Level 3: {{level_3}}%</h6>  
+		<h6>End on Level 3: {{level_3}}%</h6>  -->
 
 
 	</div>
+	
 	<div class="container">
 		{% for result_pit in results_pit %}
 		<h5><u>Pit Data</u></h5>
@@ -134,22 +142,13 @@
 		Drivetrain type: {{result_pit.drivetrain}}</div></div>
 		<div class="row">
 		<div class="col-sm-9">
-		Autonomous: {{result_pit.auton}}</div></div>
+		Color Wheel Adjustment: {{result_pit.t_adjustment}}</div></div>
 		<div class="row">
 		<div class="col-sm-9">
-		Disk Intake: {{result_pit.disk}}</div></div>
+		Color Wheel Sensors: {{result_pit.t_sensors}}</div></div>
 		<div class="row">
 		<div class="col-sm-9">
-		Ball Intake: {{result_pit.ball}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Scoring Priority: {{result_pit.scoring_priority}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Above ground scoring: {{result_pit.above_ground}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Camera feed back to Driver's Station: {{result_pit.camerafeed}}</div></div>
+		Open to using our Buddy Climb: {{result_pit.t_useofours}}</div></div>
 		<div class="row">
 		<div class="col-sm-9">
 		Climb time (in sec): {{result_pit.climb_time}}</div></div>
@@ -159,7 +158,7 @@
 
 		{% endfor %}
 	</div>
-	<br>
+	<br> 
 	<br>
     <h5>Individual Matches:</h5>
 
@@ -169,21 +168,19 @@
 	                <tr>
 	                    <th>Match Number</th>
 	                    <th>Alliance</th>
-	                    <th>Starting Level</th>
-	                    <th>Starting Piece</th>
-	                    <th>Sandstorm Hatches L1</th>
-	                    <th>Sandstorm Hatches L2</th>
-	                    <th>Sandstorm Hatches L3</th>
-	                    <th>Sandstorm Cargo L1</th>
-	                    <th>Sandstorm Cargo L2</th>
-	                    <th>Sandstorm Cargo L3</th>
-	                    <th>Teleop Hatches L1</th>
-	                    <th>Teleop Hatches L2</th>
-	                    <th>Teleop Hatches L3</th>
-	                    <th>Teleop Cargo L1</th>
-	                    <th>Teleop Cargo L2</th>
-	                    <th>Teleop Cargo L3</th>
-	                    <th>Ending Position</th>
+	                    <th>Starting Position</th>
+	                    <th>Auto Balls Upper</th>
+	                    <th>Auto Balls Inner</th>
+	                    <th>Auto Balls Lower</th>
+	                    <th>Auto Crossline</th>
+	                    <th>Teleop Balls Upper</th>
+	                    <th>Teleop Balls Inner</th>
+	                    <th>Teleop Balls Lower</th>
+	                    <th>Control Panel Rotation</th>
+	                    <th>Control Panel Color</th>
+	                    <th>Ending Climb</th>
+	                    <th>Ending Level</th>
+	                    <th>Ending Buddy Climb</th>
 	                    <th>Comments</th>
 	                    <th>Scouter Name</th>
 	                </tr>
@@ -195,20 +192,18 @@
 	                <td>{{result.match_num}}</td>
 	                <td>{{result.alliance}}</td>
 	                <td>{{result.starting}}</td>
-	                <td>{{result.start_piece}}</td>
-	                <td>{{result.s_hatches_1}}</td>
-	                <td>{{result.s_hatches_2}}</td>
-	                <td>{{result.s_hatches_3}}</td>
-	                <td>{{result.s_cargo_1}}</td>
-	                <td>{{result.s_cargo_2}}</td>
-	                <td>{{result.s_cargo_3}}</td>
-	                <td>{{result.t_hatches_1}}</td>
-	                <td>{{result.t_hatches_2}}</td>
-	                <td>{{result.t_hatches_3}}</td>
-	                <td>{{result.t_cargo_1}}</td>
-	                <td>{{result.t_cargo_2}}</td>
-	                <td>{{result.t_cargo_3}}</td>
-	                <td>{{result.ending}}</td>
+	                <td>{{result.a_upper}}</td>
+	                <td>{{result.a_inner}}</td>
+	                <td>{{result.a_lower}}</td>
+	                <td>{{result.a_crossline}}</td>
+	                <td>{{result.t_upper}}</td>
+	                <td>{{result.t_inner}}</td>
+	                <td>{{result.t_lower}}</td>
+	                <td>{{result.rotationcontrol}}</td>
+	                <td>{{result.positioncontrol}}</td>
+	                <td>{{result.ending_climb}}</td>
+	                <td>{{result.ending_level}}</td>
+	                <td>{{result.ending_buddy}}</td>
 	                <td>{{result.comments}}</td>
 	                <td>{{result.name}}</td>
 	                </tr>

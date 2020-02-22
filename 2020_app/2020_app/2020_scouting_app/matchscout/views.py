@@ -15,6 +15,7 @@ def matchscout_view(request):
 			obj = form.save(commit=False)
 			obj.save()
 			form.save_m2m()
+		#return render(request, 'matchscouterror.html', {'form': form})
 	
 	form = matchscout_form()
 	return render(request, 'matchscout.html', {'form': form})
@@ -47,35 +48,36 @@ def teamsummary(request):
 			
 			#Teleop
 
-			a_upper_avg = round(list(results.aggregate(Avg('a_upper')).values())[0], 2)
-			a_upper_max = round(list(results.aggregate(Max('a_upper')).values())[0], 2)
-			a_upper_min = round(list(results.aggregate(Min('a_upper')).values())[0], 2)
+			t_upper_avg = round(list(results.aggregate(Avg('t_upper')).values())[0], 2)
+			t_upper_max = round(list(results.aggregate(Max('t_upper')).values())[0], 2)
+			t_upper_min = round(list(results.aggregate(Min('t_upper')).values())[0], 2)
 
-			a_inner_avg = round(list(results.aggregate(Avg('a_inner')).values())[0], 2)
-			a_inner_max = round(list(results.aggregate(Max('a_inner')).values())[0], 2)
-			a_inner_min = round(list(results.aggregate(Min('a_inner')).values())[0], 2)
+			t_inner_avg = round(list(results.aggregate(Avg('t_inner')).values())[0], 2)
+			t_inner_max = round(list(results.aggregate(Max('t_inner')).values())[0], 2)
+			t_inner_min = round(list(results.aggregate(Min('t_inner')).values())[0], 2)
 
-			a_lower_avg = round(list(results.aggregate(Avg('a_lower')).values())[0], 2)
-			a_lower_max = round(list(results.aggregate(Max('a_lower')).values())[0], 2)
-			a_lower_min = round(list(results.aggregate(Min('a_lower')).values())[0], 2)
+			t_lower_avg = round(list(results.aggregate(Avg('t_lower')).values())[0], 2)
+			t_lower_max = round(list(results.aggregate(Max('t_lower')).values())[0], 2)
+			t_lower_min = round(list(results.aggregate(Min('t_lower')).values())[0], 2)
 
-			a_positioncontrol_avg = round(list(results.aggregate(Avg('a_positioncontrol')).values())[0], 2)
+			positioncontrol_avg = round(list(results.aggregate(Avg('positioncontrol')).values())[0], 2)
 
-			a_rotationcontrol_avg = round(list(results.aggregate(Avg('a_rotationcontrol')).values())[0], 2)
+			rotationcontrol_avg = round(list(results.aggregate(Avg('rotationcontrol')).values())[0], 2)
 
-			a_climb_avg = round(list(results.aggregate(Avg('a_climb')).values())[0], 2)
+			climb_avg = round(list(results.aggregate(Avg('ending_climb')).values())[0], 2)
 
-			a_level_avg = round(list(results.aggregate(Avg('a_level')).values())[0], 2)
+			level_avg = round(list(results.aggregate(Avg('ending_level')).values())[0], 2)
 
-			a_buddy_avg = round(list(results.aggregate(Avg('a_buddy')).values())[0], 2)
+			buddy_avg = round(list(results.aggregate(Avg('ending_buddy')).values())[0], 2)
 
-			level_1 = round(results.filter(ending=1).count()/results.count() * 100, 2)
-			level_2 = round(results.filter(ending=2).count()/results.count() * 100, 2)
-			level_3 = round(results.filter(ending=3).count()/results.count() * 100, 2)
+			#level_1 = round(results.filter(ending=1).count()/results.count() * 100, 2)
+			#level_2 = round(results.filter(ending=2).count()/results.count() * 100, 2)
+			#level_3 = round(results.filter(ending=3).count()/results.count() * 100, 2)
 
 
 			search_run = True
-			return render(request, 'teamsummary.html', {'results': results, 'results_pit':results_pit, 'search_run':search_run, 's_hatches_1_avg':s_hatches_1_avg, 's_hatches_1_max':s_hatches_2_max,'s_hatches_1_min':s_hatches_1_min, 's_cargo_1_avg':s_cargo_1_avg, 's_cargo_1_max':s_cargo_1_max, 's_cargo_1_min':s_cargo_1_min, 's_hatches_2_avg':s_hatches_2_avg, 's_hatches_2_max':s_hatches_2_max, 's_hatches_2_min':s_hatches_2_min, 's_cargo_2_avg':s_cargo_2_avg, 's_cargo_2_max':s_cargo_2_max, 's_cargo_2_min':s_cargo_2_min, 's_hatches_3_avg':s_hatches_3_avg, 's_hatches_3_max':s_hatches_3_max, 's_hatches_3_min':s_hatches_3_min, 's_cargo_3_avg':s_cargo_3_avg, 's_cargo_3_max':s_cargo_3_max, 's_cargo_3_min':s_cargo_3_min, 't_hatches_1_avg':t_hatches_1_avg, 't_hatches_1_max':t_hatches_1_max, 't_hatches_1_min':t_hatches_1_min, 't_cargo_1_avg':t_cargo_1_avg, 't_cargo_1_max':t_cargo_1_max, 't_cargo_1_min':t_cargo_1_min, 't_hatches_2_avg':t_hatches_2_avg, 't_hatches_2_max':t_hatches_2_max, 't_hatches_2_min':t_hatches_2_min, 't_cargo_2_avg':t_cargo_2_avg, 't_cargo_2_max':t_cargo_2_max, 't_cargo_2_min':t_cargo_2_min, 't_hatches_3_avg':t_hatches_3_avg, 't_hatches_3_max':t_hatches_3_max, 't_hatches_3_min':t_hatches_3_min, 't_cargo_3_avg':t_cargo_3_avg, 't_cargo_3_max':t_cargo_3_max, 't_cargo_3_min':t_cargo_3_min, 'level_1':level_1, 'level_2':level_2, 'level_3':level_3})
+			
+			return render(request, 'teamsummary.html', {'results': results, 'results_pit':results_pit, 'search_run':search_run, 'a_upper_avg':a_upper_avg,'a_upper_max':a_upper_max,'a_upper_min':a_upper_min,'a_inner_avg':a_inner_avg,'a_inner_max':a_inner_max,'a_inner_min':a_inner_min,'a_lower_avg':a_lower_avg,'a_lower_max':a_lower_max,'a_lower_min':a_lower_min,'a_crossline_avg':a_crossline_avg,'t_upper_avg':t_upper_avg,'t_upper_max':t_upper_max,'t_upper_min':t_upper_min,'t_inner_avg':t_inner_avg,'t_inner_max':t_inner_max,'t_inner_min':t_inner_min,'t_lower_avg':t_lower_avg,'t_lower_max':t_lower_max,'t_lower_min':t_lower_min,'positioncontrol_avg':positioncontrol_avg,'rotationcontrol_avg':rotationcontrol_avg,'climb_avg':climb_avg,'level_avg':level_avg,'buddy_avg':buddy_avg})
 		else:
 			search_run = False
 			return render(request, 'teamsummary.html', {'search_run':search_run})

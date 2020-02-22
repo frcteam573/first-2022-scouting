@@ -14,7 +14,9 @@ def pitscout(request):
 			obj = form.save(commit=False)
 			obj.save()
 			form.save_m2m()
-	
+
+		#return render(request, 'pitscouterrors.html', {'form': form})
+
 	form = pitscout_form()
 	return render(request, 'pitscout.html', {'form': form})
 
