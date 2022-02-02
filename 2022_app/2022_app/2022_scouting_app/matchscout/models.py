@@ -12,7 +12,7 @@ class matchscout(models.Model):
 	alliance_colors = (('Red','Red'),('Blue','Blue'))
 	alliance = models.CharField(max_length = 4, choices = alliance_colors, default = 'Red')
 
-	starting_position = ((1, 'Zone 1'), (2, 'Zone 2'), (3, 'Zone 3'), (4, 'Zone 4'), (5, 'Zone 5'))
+	starting_position = ((1, 'Zone 1'), (2, 'Zone 2'), (3, 'Zone 3'), (4, 'Zone 4'))
 	starting = models.IntegerField(choices = starting_position, default = 'Zone 1')
 
 	#starting_piece = (('Hatch','Hatch'),('Cargo','Cargo'))
