@@ -8,7 +8,7 @@ class pitscout(models.Model):
 	drivetrain_types = (('4-wheel tank','4-wheel tank'), ('6-wheel tank','6-wheel tank'),('Swerve','Swerve'),('Omni','Omni'),('Mechanim','Mechanim'),('Other','Other'))
 	drivetrain = models.CharField(max_length = 20, choices = drivetrain_types, default = 'Other')
 
-	start_location_ls = (('Zone 1','Zone 1'),('Zone 2','Zone 2'), ('Zone 3', 'Zone 3'), ('Zone 4', 'Zone 4'), ('Zone 5', 'Zone 5'))
+	start_location_ls = (('Zone 1','Zone 1'),('Zone 2','Zone 2'), ('Zone 3', 'Zone 3'), ('Zone 4', 'Zone 4'))
 	start_location = models.CharField(max_length = 6, choices = start_location_ls, default = 'Zone 1')
 
 	yesno = ((1, 'Yes'), (0, 'No'))
