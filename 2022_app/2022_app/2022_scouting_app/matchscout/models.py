@@ -21,30 +21,10 @@ class matchscout(models.Model):
 
 	a_lower = models.IntegerField(default = 0)
 	a_upper = models.IntegerField(default = 0)
-	a_inner = models.IntegerField(default = 0)
 	yesno = ((0, 'No'),(1, 'Yes'))
 	a_crossline = models.IntegerField(choices = yesno, default = 'No')
 
-
 	t_lower = models.IntegerField(default = 0)
 	t_upper = models.IntegerField(default = 0)
-	t_inner = models.IntegerField(default = 0)
-	yesno2 = ((0, 'No'),(1, 'Yes'))
-	yesno3 = ((0, 'No'),(1, 'Yes'))
-	positioncontrol = models.IntegerField(choices = yesno2, default = 'No')
-	rotationcontrol= models.IntegerField(choices = yesno3, default = 'No')
-	#s_hatches_sum = models.(s_hatches_1 + s_hatches_2 + s_hatches_3)
-
-
-	# post-match info
-	yesno4 = ((0, 'No'),(1, 'Yes'))
-	yesno5 = ((0, 'No'),(1, 'Yes'))
-	yesno6 = ((0, 'No'),(1, 'Yes'))
-	ending_climb = models.IntegerField(choices = yesno4, default = 'No') 
-	ending_level = models.IntegerField(choices = yesno5, default = 'No')
-	ending_buddy = models.IntegerField(choices = yesno6, default = 'No')
-	
-
-	#score = models.IntegerField(blank = True)
 
 	comments = models.TextField()

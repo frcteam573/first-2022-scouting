@@ -15,7 +15,7 @@ class pitscout(models.Model):
 
 	a_crossline = models.IntegerField(choices = yesno, default = 0)
 
-	a_goal_ls = (('upper', 'upper'), ('lower', 'lower'), ('inner', 'inner'))
+	a_goal_ls = (('upper', 'upper'), ('lower', 'lower'))
 	a_goal = models.CharField(max_length = 5, choices = a_goal_ls, default = 'upper')
 
 	a_ballscore =  models.IntegerField(default = 0)
@@ -24,26 +24,11 @@ class pitscout(models.Model):
 
 	t_lowergoal = models.IntegerField(choices = yesno, default = 0)
 	t_uppergoal = models.IntegerField(choices = yesno, default = 0)
-	t_innergoal = models.IntegerField(choices = yesno, default = 0)
 
 #ball intake 
 
 	t_humanplayer = models.IntegerField(choices = yesno, default = 0)
 	t_ground = models.IntegerField(choices = yesno, default = 0)
-
-#color wheel
-
-	t_adjustment = models.IntegerField(choices = yesno, default = 0)
-	t_sensors = models.IntegerField(choices = yesno, default = 0)
-
-#climb
-
-	t_climb = models.IntegerField(choices = yesno, default = 0)
-	t_buddyclimb = models.IntegerField(choices = yesno, default = 0)
-	t_useofours = models.IntegerField(choices = yesno, default = 0)
-
-	t_time = models.IntegerField(default = 0)
-
 	strength = models.TextField()
 
 	comments = models.TextField()

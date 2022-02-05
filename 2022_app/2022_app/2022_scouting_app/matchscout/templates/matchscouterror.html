@@ -78,16 +78,6 @@
 
 
 
-	{# Level 1 #}
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Inner:<img src= "{% static "\img\minus_sign.png' %}" class = "plusminus" onclick=minus("a_inner")>
-	{{form.a_inner}}
-		<img src= "{% static "\img\plus_sign.png' %}" class = "plusminus" onclick=plus("a_inner")> </h6></div>
-	</div>
-
-
-
 </div>
 <br>
 <br>
@@ -102,10 +92,6 @@
 	<div class="row">
 	<div class="col-lg-5">
 		<h6>Goals</h6></div>
-	<div class="col-lg-5">
-		<h6>Color Wheel</h6></div>
-	</div>
-	
 
 	{# Level 3 #}
 	<div class="row">
@@ -113,9 +99,6 @@
 		<h6>Lower:<img src= "{% static "\img\minus_sign.png' %}" class = "plusminus" onclick=minus("t_lower")>
 	{{form.t_lower}}
 		<img src= "{% static "\img\plus_sign.png' %}" class = "plusminus" onclick=plus("t_lower")> </h6></div>
-	<div class="col-lg-5">
-			<h6>Position Control: {{form.positioncontrol}}</h6>
-	</div>
 	</div>
 
 
@@ -125,21 +108,7 @@
 		<h6>Upper:<img src= "{% static "\img\minus_sign.png' %}" class = "plusminus" onclick=minus("t_upper")>
 	{{form.t_upper}}
 		<img src= "{% static "\img\plus_sign.png' %}" class = "plusminus" onclick=plus("t_upper")> </h6></div>
-	<div class="col-lg-5">
-			<h6>Rotation Control: {{form.rotationcontrol}}</h6>
 	</div>
-	</div>
-
-
-	{# Level 1 #}
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Inner:<img src= "{% static "\img\minus_sign.png' %}" class = "plusminus" onclick=minus("t_inner")>
-	{{form.t_inner}}
-		<img src= "{% static "\img\plus_sign.png' %}" class = "plusminus" onclick=plus("t_inner")> </h6></div>
-	</div>
-</div>
-
 
 <br>
 <br>
@@ -152,17 +121,6 @@
 	<div class="col-sm-4">
 	<br>
 	
-	<div class="col-lg-5">
-			<h6>Climb: {{form.rotationcontrol}}</h6>
-	</div>
-
-	<div class="col-lg-5">
-			<h6>Level: {{form.rotationcontrol}}</h6>
-	</div>
-	<div class="col-lg-5">
-			<h6>Buddy: {{form.rotationcontrol}}</h6>
-	</div>
-
 	<div class="row">
 	<div class="col-sm-12">
 	Comments: {{form.comments}}</div></div>

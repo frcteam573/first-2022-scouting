@@ -35,10 +35,6 @@ def teamsummary(request):
 			a_upper_max = round(list(results.aggregate(Max('a_upper')).values())[0], 2)
 			a_upper_min = round(list(results.aggregate(Min('a_upper')).values())[0], 2)
 
-			a_inner_avg = round(list(results.aggregate(Avg('a_inner')).values())[0], 2)
-			a_inner_max = round(list(results.aggregate(Max('a_inner')).values())[0], 2)
-			a_inner_min = round(list(results.aggregate(Min('a_inner')).values())[0], 2)
-
 			a_lower_avg = round(list(results.aggregate(Avg('a_lower')).values())[0], 2)
 			a_lower_max = round(list(results.aggregate(Max('a_lower')).values())[0], 2)
 			a_lower_min = round(list(results.aggregate(Min('a_lower')).values())[0], 2)
@@ -52,32 +48,13 @@ def teamsummary(request):
 			t_upper_max = round(list(results.aggregate(Max('t_upper')).values())[0], 2)
 			t_upper_min = round(list(results.aggregate(Min('t_upper')).values())[0], 2)
 
-			t_inner_avg = round(list(results.aggregate(Avg('t_inner')).values())[0], 2)
-			t_inner_max = round(list(results.aggregate(Max('t_inner')).values())[0], 2)
-			t_inner_min = round(list(results.aggregate(Min('t_inner')).values())[0], 2)
-
 			t_lower_avg = round(list(results.aggregate(Avg('t_lower')).values())[0], 2)
 			t_lower_max = round(list(results.aggregate(Max('t_lower')).values())[0], 2)
 			t_lower_min = round(list(results.aggregate(Min('t_lower')).values())[0], 2)
 
-			positioncontrol_avg = round(list(results.aggregate(Avg('positioncontrol')).values())[0], 2)
-
-			rotationcontrol_avg = round(list(results.aggregate(Avg('rotationcontrol')).values())[0], 2)
-
-			climb_avg = round(list(results.aggregate(Avg('ending_climb')).values())[0], 2)
-
-			level_avg = round(list(results.aggregate(Avg('ending_level')).values())[0], 2)
-
-			buddy_avg = round(list(results.aggregate(Avg('ending_buddy')).values())[0], 2)
-
-			#level_1 = round(results.filter(ending=1).count()/results.count() * 100, 2)
-			#level_2 = round(results.filter(ending=2).count()/results.count() * 100, 2)
-			#level_3 = round(results.filter(ending=3).count()/results.count() * 100, 2)
-
-
 			search_run = True
 			
-			return render(request, 'teamsummary.html', {'results': results, 'results_pit':results_pit, 'search_run':search_run, 'a_upper_avg':a_upper_avg,'a_upper_max':a_upper_max,'a_upper_min':a_upper_min,'a_inner_avg':a_inner_avg,'a_inner_max':a_inner_max,'a_inner_min':a_inner_min,'a_lower_avg':a_lower_avg,'a_lower_max':a_lower_max,'a_lower_min':a_lower_min,'a_crossline_avg':a_crossline_avg,'t_upper_avg':t_upper_avg,'t_upper_max':t_upper_max,'t_upper_min':t_upper_min,'t_inner_avg':t_inner_avg,'t_inner_max':t_inner_max,'t_inner_min':t_inner_min,'t_lower_avg':t_lower_avg,'t_lower_max':t_lower_max,'t_lower_min':t_lower_min,'positioncontrol_avg':positioncontrol_avg,'rotationcontrol_avg':rotationcontrol_avg,'climb_avg':climb_avg,'level_avg':level_avg,'buddy_avg':buddy_avg})
+			return render(request, 'teamsummary.html', {'results': results, 'results_pit':results_pit, 'search_run':search_run, 'a_upper_avg':a_upper_avg,'a_upper_max':a_upper_max,'a_upper_min':a_upper_min,'a_lower_avg':a_lower_avg,'a_lower_max':a_lower_max,'a_lower_min':a_lower_min,'a_crossline_avg':a_crossline_avg,'t_upper_avg':t_upper_avg,'t_upper_max':t_upper_max,'t_upper_min':t_upper_min,'t_lower_avg':t_lower_avg,'t_lower_max':t_lower_max,'t_lower_min':t_lower_min})
 		else:
 			search_run = False
 			return render(request, 'teamsummary.html', {'search_run':search_run})
