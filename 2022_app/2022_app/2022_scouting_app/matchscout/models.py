@@ -15,16 +15,19 @@ class matchscout(models.Model):
 	starting_position = ((1, 'Zone 1'), (2, 'Zone 2'), (3, 'Zone 3'), (4, 'Zone 4'))
 	starting = models.IntegerField(choices = starting_position, default = 'Zone 1')
 
-	#starting_piece = (('Hatch','Hatch'),('Cargo','Cargo'))
-	#start_piece = models.CharField(max_length = 10, choices = starting_piece, default = 'Hatch')
-	# during match info
-
 	a_lower = models.IntegerField(default = 0)
 	a_upper = models.IntegerField(default = 0)
+
 	yesno = ((0, 'No'),(1, 'Yes'))
-	a_crossline = models.IntegerField(choices = yesno, default = 'No')
+	yesno2 = ((0, 'No'),(1, 'Yes'))
+	a_crossline = models.IntegerField(choices = yesno, default = 0)
+
+	a_human = models.IntegerField(choices = yesno2, default = 0)
 
 	t_lower = models.IntegerField(default = 0)
 	t_upper = models.IntegerField(default = 0)
+
+	ending_location = ((1, 'Zone 1'), (2, 'Zone 2'), (3, 'Zone 3'))
+	t_ending = models.IntegerField(choices = ending_location, default = 1)
 
 	comments = models.TextField()

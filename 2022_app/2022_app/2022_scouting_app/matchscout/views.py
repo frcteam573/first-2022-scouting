@@ -39,6 +39,7 @@ def teamsummary(request):
 			a_lower_min = round(list(results.aggregate(Min('a_lower')).values())[0], 2)
 			
 			a_crossline_avg = round(list(results.aggregate(Avg('a_crossline')).values())[0], 2)
+			a_human_avg = round(list(results.aggregate(Avg('a_human')).values())[0], 2)
 
 			
 			#Teleop
@@ -53,7 +54,7 @@ def teamsummary(request):
 
 			search_run = True
 			
-			return render(request, 'teamsummary.html', {'results': results, 'results_pit':results_pit, 'search_run':search_run, 'a_upper_avg':a_upper_avg,'a_upper_max':a_upper_max,'a_upper_min':a_upper_min,'a_lower_avg':a_lower_avg,'a_lower_max':a_lower_max,'a_lower_min':a_lower_min,'a_crossline_avg':a_crossline_avg,'t_upper_avg':t_upper_avg,'t_upper_max':t_upper_max,'t_upper_min':t_upper_min,'t_lower_avg':t_lower_avg,'t_lower_max':t_lower_max,'t_lower_min':t_lower_min})
+			return render(request, 'teamsummary.html', {'results': results, 'results_pit':results_pit, 'search_run':search_run, 'a_upper_avg':a_upper_avg,'a_upper_max':a_upper_max,'a_upper_min':a_upper_min,'a_lower_avg':a_lower_avg,'a_lower_max':a_lower_max,'a_lower_min':a_lower_min,'a_crossline_avg':a_crossline_avg,'a_human_avg':a_human_avg,'t_upper_avg':t_upper_avg,'t_upper_max':t_upper_max,'t_upper_min':t_upper_min,'t_lower_avg':t_lower_avg,'t_lower_max':t_lower_max,'t_lower_min':t_lower_min})
 		else:
 			search_run = False
 			return render(request, 'teamsummary.html', {'search_run':search_run})

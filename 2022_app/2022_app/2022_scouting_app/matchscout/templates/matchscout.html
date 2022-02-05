@@ -33,9 +33,12 @@
 				<div class="row">
 					<div class="col-sm-6">
 						Alliance: {{form.alliance}} </div>
-
 					<div class="col-sm-6">
-						Starting Location: {{form.starting}} </div>
+						<h6>
+							Starting Location: {{form.t_ending}}
+						</h6>
+						<img src="{% static '\img\Field.png' %}" width="250">
+					</div>
 				</div>
 				<br>
 
@@ -84,6 +87,9 @@
 					<div class="col-lg-5">
 						<h6>Leave TARMAC: {{form.a_crossline}}</h6>
 					</div>
+					<div class="col-lg-5">
+						<h6>HumanPlayer Score: {{form.a_human}}</h6>
+					</div>
 				</div>
 
 			</div>
@@ -127,26 +133,33 @@
 					</div>
 				</div>
 
-
-
-			<br>
-			<br>
-
-			{# Endgame #}
-			<div class="container">
 				<div class="row">
-					<h3>Post Match Info</h3>
+					<div class="col-sm-6">
+						<h6>
+							Ending Location: {{form.t_ending}}
+						</h6>
+						<img src="{% static '\img\Field.png' %}" width="250">
+					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<br>
-						<div class="row">
-							<div class="col-sm-12">
-								Comments: {{form.comments}}</div>
-						</div>
+
+				<br>
+				<br>
+
+				{# Endgame #}
+				<div class="container">
+					<div class="row">
+						<h3>Post Match Info</h3>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<br>
+							<div class="row">
+								<div class="col-sm-12">
+									Comments: {{form.comments}}</div>
+							</div>
 
 
-						<button class="btn btn-primary" type="submit">Save</button>
+							<button class="btn btn-primary" type="submit">Save</button>
 		</form>
 
 	</body>

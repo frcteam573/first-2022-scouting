@@ -12,8 +12,10 @@ class pitscout(models.Model):
 	start_location = models.CharField(max_length = 6, choices = start_location_ls, default = 'Zone 1')
 
 	yesno = ((1, 'Yes'), (0, 'No'))
+	yesno2 = ((1, 'Yes'), (0, 'No'))
 
 	a_crossline = models.IntegerField(choices = yesno, default = 0)
+	a_human = models.IntegerField(choices = yesno2, default = 0)
 
 	a_goal_ls = (('upper', 'upper'), ('lower', 'lower'))
 	a_goal = models.CharField(max_length = 5, choices = a_goal_ls, default = 'upper')
