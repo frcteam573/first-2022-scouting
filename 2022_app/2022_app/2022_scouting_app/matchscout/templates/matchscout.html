@@ -6,172 +6,197 @@
 
 
 <section class="bar background-image-fixed-1 no-mb color-white">
-<body>
-  
-<form action="/matchscout/" method="POST" class="form-bootstrap modal-like-shadow" enctype="multipart/form-data">
-	{% csrf_token %}
-<h1>Match Scouting Page</h1>
-{# Pre Match Info #}
-<div class="container">
 
-	<h3>Pre Match Info</h3>
+	<body>
 
-	{{ form.errors }}
-	{{ form.non_field_errors }}
+		<form action="/matchscout/" method="POST" class="form-bootstrap modal-like-shadow"
+			enctype="multipart/form-data">
+			{% csrf_token %}
+			<h1>Match Scouting Page</h1>
+			{# Pre Match Info #}
+			<div class="container">
 
-	<div class="row">
-	<div class="col-sm-6">
-	Team Number: {{form.team_num}} </div>
-	<div class="col-sm-6">
-	Match Number: {{form.match_num}} </div> </div>
+				<h3>Pre Match Info</h3>
 
-	<div class="row"> <br> </div>
+				{{ form.errors }}
+				{{ form.non_field_errors }}
 
-	<div class="row">
-	<div class="col-sm-6">
-	Alliance: {{form.alliance}} </div>
-	
-	<div class="col-sm-6">
-	Starting Position: {{form.starting}} </div>
-	</div>
-	<br>
+				<div class="row">
+					<div class="col-sm-6">
+						Team Number: {{form.team_num}} </div>
+					<div class="col-sm-6">
+						Match Number: {{form.match_num}} </div>
+				</div>
 
-	<div class="row">
-	<div class="col-sm-6">
-	Scouter Name: {{form.name}}</div></div>
-	<br>
+				<div class="row"> <br> </div>
 
+				<div class="row">
+					<div class="col-sm-6">
+						Alliance: {{form.alliance}} </div>
 
+					<div class="col-sm-6">
+						Starting Position: {{form.starting}} </div>
+				</div>
+				<br>
 
-	
-</div>	
-<br>
-<br>
-
-{# During Match Info #}
-	{#Sandstorm Info #}
-
-<div class="container">
-
-	<h3>Autonomous Info</h3>
-
-
-	{# Level 3 #}
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Lower:<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("a_lower")>
-	{{form.a_lower}}
-		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("a_lower")> </h6></div>
-	</div>
-
-
-	{# Level 2 #}	
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Upper:<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("a_upper")>
-	{{form.a_upper}}
-		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("a_upper")> </h6></div>
-		<div class="col-lg-5">
-			<h6>Cross Line: {{form.a_crossline}}</h6>
-	</div>
-</div>
+				<div class="row">
+					<div class="col-sm-6">
+						Scouter Name: {{form.name}}</div>
+				</div>
+				<br>
 
 
 
-	{# Level 1 #}
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Inner:<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("a_inner")>
-	{{form.a_inner}}
-		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("a_inner")> </h6></div>
-	</div>
+
+			</div>
+			<br>
+			<br>
+
+			{# During Match Info #}
+			{#Sandstorm Info #}
+
+			<div class="container">
+
+				<h3>Autonomous Info</h3>
+
+
+				{# Level 3 #}
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Lower:<img src="{% static '\img\minus_sign.png' %}" class="plusminus"
+								onclick=minus("a_lower")>
+							{{form.a_lower}}
+							<img src="{% static '\img\plus_sign.png' %}" class="plusminus" onclick=plus("a_lower")>
+						</h6>
+					</div>
+				</div>
+
+
+				{# Level 2 #}
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Upper:<img src="{% static '\img\minus_sign.png' %}" class="plusminus"
+								onclick=minus("a_upper")>
+							{{form.a_upper}}
+							<img src="{% static '\img\plus_sign.png' %}" class="plusminus" onclick=plus("a_upper")>
+						</h6>
+					</div>
+					<div class="col-lg-5">
+						<h6>Cross Line: {{form.a_crossline}}</h6>
+					</div>
+				</div>
 
 
 
-</div>
-<br>
-<br>
+				{# Level 1 #}
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Inner:<img src="{% static '\img\minus_sign.png' %}" class="plusminus"
+								onclick=minus("a_inner")>
+							{{form.a_inner}}
+							<img src="{% static '\img\plus_sign.png' %}" class="plusminus" onclick=plus("a_inner")>
+						</h6>
+					</div>
+				</div>
 
 
-	{# Teleop Info #}
 
-<div class="container border-top">
-
-	<h3>Teleop Info</h3>
-<br>
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Goals</h6></div>
-	<div class="col-lg-5">
-		<h6>Color Wheel</h6></div>
-	</div>
-	
-
-	{# Level 3 #}
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Lower:<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_lower")>
-	{{form.t_lower}}
-		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_lower")> </h6></div>
-	<div class="col-lg-5">
-			<h6>Position Control: {{form.positioncontrol}}</h6>
-	</div>
-	</div>
+			</div>
+			<br>
+			<br>
 
 
-	{# Level 2 #}	
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Upper:<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_upper")>
-	{{form.t_upper}}
-		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_upper")> </h6></div>
-	<div class="col-lg-5">
-			<h6>Rotation Control: {{form.rotationcontrol}}</h6>
-	</div>
-	</div>
+			{# Teleop Info #}
+
+			<div class="container border-top">
+
+				<h3>Teleop Info</h3>
+				<br>
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Goals</h6>
+					</div>
+					<div class="col-lg-5">
+						<h6>Color Wheel</h6>
+					</div>
+				</div>
 
 
-	{# Level 1 #}
-	<div class="row">
-	<div class="col-lg-5">
-		<h6>Inner:<img src= "{% static "\img\minus_sign.png" %}" class = "plusminus" onclick=minus("t_inner")>
-	{{form.t_inner}}
-		<img src= "{% static "\img\plus_sign.png" %}" class = "plusminus" onclick=plus("t_inner")> </h6></div>
-	</div>
-</div>
+				{# Level 3 #}
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Lower:<img src="{% static '\img\minus_sign.png' %}" class="plusminus"
+								onclick=minus("t_lower")>
+							{{form.t_lower}}
+							<img src="{% static '\img\plus_sign.png' %}" class="plusminus" onclick=plus("t_lower")>
+						</h6>
+					</div>
+					<div class="col-lg-5">
+						<h6>Position Control: {{form.positioncontrol}}</h6>
+					</div>
+				</div>
 
 
-<br>
-<br>
-
-{# Endgame #}
-<div class="container">
-	<div class="row">
-	<h3>Post Match Info</h3></div>
-	<div class="row">
-	<div class="col-sm-4">
-	<br>
-	
-	<div class="col-lg-5">
-			<h6>Climb: {{form.ending_climb}}</h6>
-	</div>
-
-	<div class="col-lg-5">
-			<h6>Level: {{form.ending_level}}</h6>
-	</div>
-	<div class="col-lg-5">
-			<h6>Buddy: {{form.ending_buddy}}</h6>
-	</div>
-
-	<div class="row">
-	<div class="col-sm-12">
-	Comments: {{form.comments}}</div></div>
+				{# Level 2 #}
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Upper:<img src="{% static '\img\minus_sign.png' %}" class="plusminus"
+								onclick=minus("t_upper")>
+							{{form.t_upper}}
+							<img src="{% static '\img\plus_sign.png' %}" class="plusminus" onclick=plus("t_upper")>
+						</h6>
+					</div>
+					<div class="col-lg-5">
+						<h6>Rotation Control: {{form.rotationcontrol}}</h6>
+					</div>
+				</div>
 
 
-<button class="btn btn-primary" type="submit">Save</button>
-</form>
+				{# Level 1 #}
+				<div class="row">
+					<div class="col-lg-5">
+						<h6>Inner:<img src="{% static '\img\minus_sign.png' %}" class="plusminus"
+								onclick=minus("t_inner")>
+							{{form.t_inner}}
+							<img src="{% static '\img\plus_sign.png' %}" class="plusminus" onclick=plus("t_inner")>
+						</h6>
+					</div>
+				</div>
+			</div>
 
-</body>
+
+			<br>
+			<br>
+
+			{# Endgame #}
+			<div class="container">
+				<div class="row">
+					<h3>Post Match Info</h3>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<br>
+
+						<div class="col-lg-5">
+							<h6>Climb: {{form.ending_climb}}</h6>
+						</div>
+
+						<div class="col-lg-5">
+							<h6>Level: {{form.ending_level}}</h6>
+						</div>
+						<div class="col-lg-5">
+							<h6>Buddy: {{form.ending_buddy}}</h6>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12">
+								Comments: {{form.comments}}</div>
+						</div>
+
+
+						<button class="btn btn-primary" type="submit">Save</button>
+		</form>
+
+	</body>
 </section>
 {% endblock %}
-

@@ -5,216 +5,222 @@
 {% block content %}
 
 <section class="bar background-image-fixed-1 no-mb color-white">
-<body>
 
-<h1>Team Summary Page</h1>
-{% if not search_run %}
-<form action="/teamsummary/" method="GET" class="form-bootstrap modal-like-shadow">
-	<input id = "team_number" type = "text" name = "team_number"/>
-	<input class = "btn" type = "Submit" value = "Search"/>
+	<body>
 
-</form>
+		<h1>Team Summary Page</h1>
+		{% if not search_run %}
+		<form action="/teamsummary/" method="GET" class="form-bootstrap modal-like-shadow">
+			<input id="team_number" type="text" name="team_number" />
+			<input class="btn" type="Submit" value="Search" />
 
-{% else %}
-{% for result in results %}
-{% if forloop.first %}
-    <h3>Team {{result.team_num}} Summary</h3>
-    <br>
-    {# Autonomous stats #}
-    <div class="container">
-		<h5> Autonomous </h5>
-		<table class="table table-hover">
-	            <thead>
-	                <tr>
-	                    <th> </th>
-	                    <th>Average</th>                  
-	                    <th>Max</th>
-	                    <th>Min</th>
-	                </tr>
-	            </thead>
+		</form>
 
-	            <tbody>
-	            	<tr>
-	                <td> Upper </td>
-	                <td> {{a_upper_avg}}</td>            
-	                <td> {{a_upper_max}}</td>
-	                <td> {{a_upper_min}}</td>
-	                </tr>
-	                <tr>
-	                <td> Inner </td>
-	                <td> {{a_inner_avg}}</td>            
-	                <td> {{a_inner_max}}</td>
-	                <td> {{a_inner_min}}</td>
-	            	</tr>
-	            	<tr>
-	            	<td> Lower </td>
-	            	<td> {{a_lower_avg}}</td>            
-	            	<td> {{a_lower_max}}</td>
-	                <td> {{a_lower_min}}</td>
-	            	</tr>
-	            	<tr>
-	            	<td> Crossline</td>
-	            	<td> {{a_crossline_avg}}</td>            
+		{% else %}
+		{% for result in results %}
+		{% if forloop.first %}
+		<h3>Team {{result.team_num}} Summary</h3>
+		<br>
+		{# Autonomous stats #}
+		<div class="container">
+			<h5> Autonomous </h5>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th> </th>
+						<th>Average</th>
+						<th>Max</th>
+						<th>Min</th>
+					</tr>
+				</thead>
 
-	            </tbody>
-	        </table>
+				<tbody>
+					<tr>
+						<td> Upper </td>
+						<td> {{a_upper_avg}}</td>
+						<td> {{a_upper_max}}</td>
+						<td> {{a_upper_min}}</td>
+					</tr>
+					<tr>
+						<td> Inner </td>
+						<td> {{a_inner_avg}}</td>
+						<td> {{a_inner_max}}</td>
+						<td> {{a_inner_min}}</td>
+					</tr>
+					<tr>
+						<td> Lower </td>
+						<td> {{a_lower_avg}}</td>
+						<td> {{a_lower_max}}</td>
+						<td> {{a_lower_min}}</td>
+					</tr>
+					<tr>
+						<td> Crossline</td>
+						<td> {{a_crossline_avg}}</td>
+
+				</tbody>
+			</table>
 
 
-	</div>
+		</div>
 
-	{# Teleop stats #}
+		{# Teleop stats #}
 
-	<div class="container">
-		<h5>Teleop</h5>
-		<table class="table table-hover">
-	            <thead>
-	                <tr>
-	                   
-	            </tbody>
-	            <thead>
-	            	<tr>
-	            		<th> </th>
-	            		<th>Average</th>
-	            		<th>Max</th>
-	            		<th>Min</th>
-	            	</tr>
-	            </thead>
+		<div class="container">
+			<h5>Teleop</h5>
+			<table class="table table-hover">
+				<thead>
+					<tr>
 
-	            <tbody>
-	            	<tr>
-	                <td> Upper </td>
-	                <td> {{t_upper_avg}}</td>            
-	                <td> {{t_upper_max}}</td>
-	                <td> {{t_upper_min}}</td>
-	                </tr>
-	                <tr>
-	                <td> Inner </td>
-	                <td> {{t_inner_avg}}</td>            
-	                <td> {{t_inner_max}}</td>
-	                <td> {{t_inner_min}}</td>
-	            	</tr>
-	            	<tr>
-	            	<td> Lower </td>
-	            	<td> {{t_lower_avg}}</td>            
-	            	<td> {{t_lower_max}}</td>
-	                <td> {{t_lower_min}}</td>
-	            	</tr>
-	            	<tr>
-	            	<td> Position Control</td>
-	            	<td> {{positioncontrol_avg}}</td>            
-	            	</tr>
-	            	<td> Rotational Control</td>
-	            	<td> {{rotationcontrol_avg}}</td> 
-	            	</tr>
-	            	<tr>
-	            	<td> Climb </td>
-	            	<td> {{climb_avg}}</td> 
-	            	</tr>  
-	            	<tr>        
-	            	<td> Level Climb </td>
-	            	<td> {{level_avg}}</td>
-	            	</tr>
-	            	<tr>
-	            	<td> Buddy Climb </td>
-	            	<td> {{buddy_avg}}</td>
-	            	</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<th> </th>
+								<th>Average</th>
+								<th>Max</th>
+								<th>Min</th>
+							</tr>
+						</thead>
 
-	            </tbody>
-	            <thead>
-	            	<tr>
-	            		
-	            </tbody>
-	        </table>
-		
-		<!--<h6>End on Level 1: {{level_1}}%</h6>
+				<tbody>
+					<tr>
+						<td> Upper </td>
+						<td> {{t_upper_avg}}</td>
+						<td> {{t_upper_max}}</td>
+						<td> {{t_upper_min}}</td>
+					</tr>
+					<tr>
+						<td> Inner </td>
+						<td> {{t_inner_avg}}</td>
+						<td> {{t_inner_max}}</td>
+						<td> {{t_inner_min}}</td>
+					</tr>
+					<tr>
+						<td> Lower </td>
+						<td> {{t_lower_avg}}</td>
+						<td> {{t_lower_max}}</td>
+						<td> {{t_lower_min}}</td>
+					</tr>
+					<tr>
+						<td> Position Control</td>
+						<td> {{positioncontrol_avg}}</td>
+					</tr>
+					<td> Rotational Control</td>
+					<td> {{rotationcontrol_avg}}</td>
+					</tr>
+					<tr>
+						<td> Climb </td>
+						<td> {{climb_avg}}</td>
+					</tr>
+					<tr>
+						<td> Level Climb </td>
+						<td> {{level_avg}}</td>
+					</tr>
+					<tr>
+						<td> Buddy Climb </td>
+						<td> {{buddy_avg}}</td>
+					</tr>
+
+				</tbody>
+				<thead>
+					<tr>
+
+						</tbody>
+			</table>
+
+			<!--<h6>End on Level 1: {{level_1}}%</h6>
 		<h6>End on Level 2: {{level_2}}%</h6>
 		<h6>End on Level 3: {{level_3}}%</h6>  -->
 
 
-	</div>
-	
-	<div class="container">
-		{% for result_pit in results_pit %}
-		<h5><u>Pit Data</u></h5>
-		
-		<div class="row">
-		<div class="col-sm-9">
-		Drivetrain type: {{result_pit.drivetrain}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Color Wheel Adjustment: {{result_pit.t_adjustment}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Color Wheel Sensors: {{result_pit.t_sensors}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Open to using our Buddy Climb: {{result_pit.t_useofours}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Climb time (in sec): {{result_pit.climb_time}}</div></div>
-		<div class="row">
-		<div class="col-sm-9">
-		Strengths: {{result_pit.strength}}</div></div>
+		</div>
 
-		{% endfor %}
-	</div>
-	<br> 
-	<br>
-    <h5>Individual Matches:</h5>
+		<div class="container">
+			{% for result_pit in results_pit %}
+			<h5><u>Pit Data</u></h5>
 
-	<table class="table table-hover">
-	            <thead>
+			<div class="row">
+				<div class="col-sm-9">
+					Drivetrain type: {{result_pit.drivetrain}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9">
+					Color Wheel Adjustment: {{result_pit.t_adjustment}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9">
+					Color Wheel Sensors: {{result_pit.t_sensors}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9">
+					Open to using our Buddy Climb: {{result_pit.t_useofours}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9">
+					Climb time (in sec): {{result_pit.climb_time}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9">
+					Strengths: {{result_pit.strength}}</div>
+			</div>
 
-	                <tr>
-	                    <th>Match Number</th>
-	                    <th>Alliance</th>
-	                    <th>Starting Position</th>
-	                    <th>Auto Balls Upper</th>
-	                    <th>Auto Balls Inner</th>
-	                    <th>Auto Balls Lower</th>
-	                    <th>Auto Crossline</th>
-	                    <th>Teleop Balls Upper</th>
-	                    <th>Teleop Balls Inner</th>
-	                    <th>Teleop Balls Lower</th>
-	                    <th>Control Panel Rotation</th>
-	                    <th>Control Panel Color</th>
-	                    <th>Ending Climb</th>
-	                    <th>Ending Level</th>
-	                    <th>Ending Buddy Climb</th>
-	                    <th>Comments</th>
-	                    <th>Scouter Name</th>
-	                </tr>
-	            </thead>
+			{% endfor %}
+		</div>
+		<br>
+		<br>
+		<h5>Individual Matches:</h5>
 
-	            <tbody>
-	            	{% endif %}
-	                <tr>
-	                <td>{{result.match_num}}</td>
-	                <td>{{result.alliance}}</td>
-	                <td>{{result.starting}}</td>
-	                <td>{{result.a_upper}}</td>
-	                <td>{{result.a_inner}}</td>
-	                <td>{{result.a_lower}}</td>
-	                <td>{{result.a_crossline}}</td>
-	                <td>{{result.t_upper}}</td>
-	                <td>{{result.t_inner}}</td>
-	                <td>{{result.t_lower}}</td>
-	                <td>{{result.rotationcontrol}}</td>
-	                <td>{{result.positioncontrol}}</td>
-	                <td>{{result.ending_climb}}</td>
-	                <td>{{result.ending_level}}</td>
-	                <td>{{result.ending_buddy}}</td>
-	                <td>{{result.comments}}</td>
-	                <td>{{result.name}}</td>
-	                </tr>
-	                {% endfor %}
-	            </tbody>
-	        </table>
+		<table class="table table-hover">
+			<thead>
+
+				<tr>
+					<th>Match Number</th>
+					<th>Alliance</th>
+					<th>Starting Position</th>
+					<th>Auto Balls Upper</th>
+					<th>Auto Balls Inner</th>
+					<th>Auto Balls Lower</th>
+					<th>Auto Crossline</th>
+					<th>Teleop Balls Upper</th>
+					<th>Teleop Balls Inner</th>
+					<th>Teleop Balls Lower</th>
+					<th>Control Panel Rotation</th>
+					<th>Control Panel Color</th>
+					<th>Ending Climb</th>
+					<th>Ending Level</th>
+					<th>Ending Buddy Climb</th>
+					<th>Comments</th>
+					<th>Scouter Name</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% endif %}
+				<tr>
+					<td>{{result.match_num}}</td>
+					<td>{{result.alliance}}</td>
+					<td>{{result.starting}}</td>
+					<td>{{result.a_upper}}</td>
+					<td>{{result.a_inner}}</td>
+					<td>{{result.a_lower}}</td>
+					<td>{{result.a_crossline}}</td>
+					<td>{{result.t_upper}}</td>
+					<td>{{result.t_inner}}</td>
+					<td>{{result.t_lower}}</td>
+					<td>{{result.rotationcontrol}}</td>
+					<td>{{result.positioncontrol}}</td>
+					<td>{{result.ending_climb}}</td>
+					<td>{{result.ending_level}}</td>
+					<td>{{result.ending_buddy}}</td>
+					<td>{{result.comments}}</td>
+					<td>{{result.name}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 
 
-{# We need to add data #}
-{% endif %}
-</body>
+		{# We need to add data #}
+		{% endif %}
+	</body>
 </section>
 {% endblock %}
-
