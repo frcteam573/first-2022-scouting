@@ -15,7 +15,6 @@ def matchscout_view(request):
 			obj = form.save(commit=False)
 			obj.save()
 			form.save_m2m()
-		#return render(request, 'matchscouterror.html', {'form': form})
 	
 	form = matchscout_form()
 	return render(request, 'matchscout.html', {'form': form})
