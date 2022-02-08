@@ -30,7 +30,7 @@ CurrDateTime = CurrDateTime.replace('.','-')
 shutil.copy('ScoutingData_template.xlsx','ScoutingData_'+CurrDateTime+'.xlsx')
 
 #Connect To Match Database
-db = sqlite3.connect('C:\\dev\\2020ScoutingApp\\ScoutingApp\\2020_Scouting_App\\2020_app\\2020_app\\2020_scouting_app\\db.sqlite3')
+db = sqlite3.connect('..\\db.sqlite3')
 c = db.cursor()
 
 #Connect To Pit Database
@@ -101,20 +101,20 @@ for inc, team in enumerate(TeamList):
         ws2.cell(row=inc2+r,column=1).value = row[3]
         ws2.cell(row=inc2+r,column=2).value = row[4]
         ws2.cell(row=inc2+r,column=3).value = row[1]
-        ws2.cell(row=inc2+r,column=4).value = row[18]
-        ws2.cell(row=inc2+r,column=5).value = row[6]
-        ws2.cell(row=inc2+r,column=6).value = row[7]
-        ws2.cell(row=inc2+r,column=7).value = row[5]
-        ws2.cell(row=inc2+r,column=8).value = row[8]
-        ws2.cell(row=inc2+r,column=9).value = row[10]
-        ws2.cell(row=inc2+r,column=10).value = row[11]
+        ws2.cell(row=inc2+r,column=4).value = row[5]
+        ws2.cell(row=inc2+r,column=5).value = row[7]
+        ws2.cell(row=inc2+r,column=6).value = row[6]
+        ws2.cell(row=inc2+r,column=7).value = row[8]
+        ws2.cell(row=inc2+r,column=8).value = row[9]
+        ws2.cell(row=inc2+r,column=9).value = row[11]
+        ws2.cell(row=inc2+r,column=10).value = row[10]
         ws2.cell(row=inc2+r,column=11).value = row[9]
-        ws2.cell(row=inc2+r,column=12).value = row[12]
-        ws2.cell(row=inc2+r,column=13).value = row[13]
-        ws2.cell(row=inc2+r,column=14).value = row[14]
-        ws2.cell(row=inc2+r,column=15).value = row[15]
-        ws2.cell(row=inc2+r,column=16).value = row[16]
-        ws2.cell(row=inc2+r,column=17).value = row[17]
+        ws2.cell(row=inc2+r,column=12).value = row[13]
+        # ws2.cell(row=inc2+r,column=13).value = row[13]
+        # ws2.cell(row=inc2+r,column=14).value = row[14]
+        # ws2.cell(row=inc2+r,column=15).value = row[15]
+        # ws2.cell(row=inc2+r,column=16).value = row[16]
+        # ws2.cell(row=inc2+r,column=17).value = row[17]
         #ws2.cell(row=inc2+r,column=18).value = row[3]
 
 ###Put in picture ----------------------------------

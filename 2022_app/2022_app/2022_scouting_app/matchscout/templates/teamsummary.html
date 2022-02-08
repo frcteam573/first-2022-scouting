@@ -12,11 +12,11 @@
 		{% if not search_run %}
 		<center>
 
-		<form action="/teamsummary/" method="GET" class="form-bootstrap modal-like-shadow">
-			<input id="team_number" type="text" name="team_number" />
-			<button class="btn btn-primary" type="submit">Search</button>
+			<form action="/teamsummary/" method="GET" class="form-bootstrap modal-like-shadow">
+				<input id="team_number" type="text" name="team_number" />
+				<button class="btn btn-primary" type="submit">Search</button>
 
-		</form>
+			</form>
 		</center>
 
 		{% else %}
@@ -53,9 +53,11 @@
 					<tr>
 						<td> Crossline</td>
 						<td> {{a_crossline_avg}}</td>
-
+					</tr>
+					<tr>
 						<td> Human Player Score</td>
 						<td> {{a_human_avg}}</td>
+					</tr>
 				</tbody>
 			</table>
 
