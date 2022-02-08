@@ -10,11 +10,14 @@
 
 		<h1>Team Summary Page</h1>
 		{% if not search_run %}
+		<center>
+
 		<form action="/teamsummary/" method="GET" class="form-bootstrap modal-like-shadow">
 			<input id="team_number" type="text" name="team_number" />
-			<input class="btn" type="Submit" value="Search" />
+			<button class="btn btn-primary" type="submit">Search</button>
 
 		</form>
+		</center>
 
 		{% else %}
 		{% for result in results %}

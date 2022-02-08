@@ -12,7 +12,7 @@
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 
 <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-<link href="/static/admin/css/dark.css" type="text/css" media="(prefers-color-scheme: dark)" rel="stylesheet">
+<link href="/static/css/dark.css" type="text/css" media="(prefers-color-scheme: dark)" rel="stylesheet">
 {% load static %}
 
 {% endblock %}
@@ -41,6 +41,12 @@
 
 {% block bootstrap4_content %}
 <!-- page content goes here -->
+<head>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center;}
+</style>
+</head>
 
 <div class='container-full'>
   {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}

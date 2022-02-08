@@ -14,7 +14,7 @@
 			{% csrf_token %}
 			<h1>Match Scouting Page</h1>
 			{# Pre Match Info #}
-			<div class="container">
+			<div class="container border-top">
 
 				<h3>Pre Match Info</h3>
 
@@ -23,16 +23,21 @@
 
 				<div class="row">
 					<div class="col-sm-6">
+						Scouter Name: {{form.name}}</div>
+					<div class="col-sm-6">
 						Team Number: {{form.team_num}} </div>
+				</div>
+				<div class="row"> <br> </div>
+				<div class="row">
 					<div class="col-sm-6">
 						Match Number: {{form.match_num}} </div>
+					<div class="col-sm-6">
+						Alliance: {{form.alliance}} </div>
 				</div>
 
 				<div class="row"> <br> </div>
 
 				<div class="row">
-					<div class="col-sm-6">
-						Alliance: {{form.alliance}} </div>
 					<div class="col-sm-6">
 						<h6>
 							Starting Location: {{form.starting}}
@@ -42,10 +47,6 @@
 				</div>
 				<br>
 
-				<div class="row">
-					<div class="col-sm-6">
-						Scouter Name: {{form.name}}</div>
-				</div>
 				<br>
 
 
@@ -56,38 +57,43 @@
 			<br>
 
 			{# During Match Info #}
-			{#Sandstorm Info #}
-
-			<div class="container">
+			<div class="container border-top">
 
 				<h3>Autonomous Info</h3>
 
 
 				{# Level 3 #}
 				<div class="row">
-					<div class="col-lg-5">
+					<div class="col-sm-6">
+						<h6>Goals</h6>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
 						<h6>Lower:<img src="{% static '\img\minus-thick.png' %}" class="plusminus"
 								onclick=minus("a_lower")>
 							{{form.a_lower}}
 							<img src="{% static '\img\plus-thick.png' %}" class="plusminus" onclick=plus("a_lower")>
 						</h6>
 					</div>
+					<div class="col-sm-6">
+						<br>
+						<h6>Leave TARMAC: {{form.a_crossline}}</h6>
+					</div>
 				</div>
 
 
 				{# Level 2 #}
 				<div class="row">
-					<div class="col-lg-5">
+					<div class="col-sm-6">
 						<h6>Upper:<img src="{% static '\img\minus-thick.png' %}" class="plusminus"
 								onclick=minus("a_upper")>
 							{{form.a_upper}}
 							<img src="{% static '\img\plus-thick.png' %}" class="plusminus" onclick=plus("a_upper")>
 						</h6>
 					</div>
-					<div class="col-lg-5">
-						<h6>Leave TARMAC: {{form.a_crossline}}</h6>
-					</div>
-					<div class="col-lg-5">
+					<div class="col-sm-6">
+						<br>
 						<h6>HumanPlayer Score: {{form.a_human}}</h6>
 					</div>
 				</div>
@@ -104,7 +110,7 @@
 				<h3>Teleop Info</h3>
 				<br>
 				<div class="row">
-					<div class="col-lg-5">
+					<div class="col-sm-6">
 						<h6>Goals</h6>
 					</div>
 				</div>
@@ -112,7 +118,7 @@
 
 				{# Level 3 #}
 				<div class="row">
-					<div class="col-lg-5">
+					<div class="col-sm-6">
 						<h6>Lower:<img src="{% static '\img\minus-thick.png' %}" class="plusminus"
 								onclick=minus("t_lower")>
 							{{form.t_lower}}
@@ -124,32 +130,29 @@
 
 				{# Level 2 #}
 				<div class="row">
-					<div class="col-lg-5">
+					<div class="col-sm-6">
 						<h6>Upper:<img src="{% static '\img\minus-thick.png' %}" class="plusminus"
 								onclick=minus("t_upper")>
 							{{form.t_upper}}
 							<img src="{% static '\img\plus-thick.png' %}" class="plusminus" onclick=plus("t_upper")>
 						</h6>
 					</div>
-				</div>
 
-				<div class="row">
 					<div class="col-sm-6">
-						<h6>
-							Ending Location: {{form.t_ending}}
-						</h6>
-						<img src="{% static '\img\Field.png' %}" width="250">
-					</div>
+					<h6>
+						Ending Location: {{form.t_ending}}
+					</h6>
+					<img src="{% static '\img\Field.png' %}" width="250">
+
+				</div>
 				</div>
 
 				<br>
 				<br>
 
 				{# Endgame #}
-				<div class="container">
-					<div class="row">
+			<div class="container border-top">
 						<h3>Post Match Info</h3>
-					</div>
 					<div class="row">
 						<div class="col-sm-4">
 							<br>
@@ -157,7 +160,6 @@
 								<div class="col-sm-12">
 									Comments: {{form.comments}}</div>
 							</div>
-
 
 							<button class="btn btn-primary" type="submit">Save</button>
 		</form>
