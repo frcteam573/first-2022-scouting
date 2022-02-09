@@ -82,12 +82,13 @@ for inc, team in enumerate(TeamList):
 
     for inc3, row_pit in enumerate(rows_pit):
         ws2.cell(row=inc3+5,column=2).value = row_pit[2]
-        ws2.cell(row=inc3+6,column=2).value = row_pit[12]
-        ws2.cell(row=inc3+7,column=2).value = row_pit[13]
-        ws2.cell(row=inc3+8,column=2).value = row_pit[16]
-        ws2.cell(row=inc3+9,column=2).value = row_pit[17]
-        ws2.cell(row=inc3+10,column=2).value = row_pit[18]
-        ws2.cell(row=inc3+11,column=2).value = row_pit[19]
+        ws2.cell(row=inc3+6,column=2).value = row_pit[4]
+        ws2.cell(row=inc3+7,column=2).value = row_pit[5]
+        ws2.cell(row=inc3+8,column=2).value = row_pit[7]
+        ws2.cell(row=inc3+9,column=2).value = row_pit[8]
+        ws2.cell(row=inc3+10,column=2).value = row_pit[3]
+        ws2.cell(row=inc3+11,column=2).value = row_pit[12]
+        ws2.cell(row=inc3+12,column=2).value = row_pit[13]
 
     #Put in match scouting data
     c.execute("SELECT * FROM matchscout_matchscout WHERE team_num="+team)
@@ -108,9 +109,8 @@ for inc, team in enumerate(TeamList):
         ws2.cell(row=inc2+r,column=8).value = row[9]
         ws2.cell(row=inc2+r,column=9).value = row[11]
         ws2.cell(row=inc2+r,column=10).value = row[10]
-        ws2.cell(row=inc2+r,column=11).value = row[9]
+        ws2.cell(row=inc2+r,column=11).value = row[12]
         ws2.cell(row=inc2+r,column=12).value = row[13]
-        # ws2.cell(row=inc2+r,column=13).value = row[13]
         # ws2.cell(row=inc2+r,column=14).value = row[14]
         # ws2.cell(row=inc2+r,column=15).value = row[15]
         # ws2.cell(row=inc2+r,column=16).value = row[16]
