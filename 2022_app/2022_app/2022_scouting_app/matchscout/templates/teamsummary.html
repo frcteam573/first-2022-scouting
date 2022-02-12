@@ -44,12 +44,14 @@
 		{% else %}
 		{% for result in results %}
 		{% if forloop.first %}
-		<div class="pagination">
-			<p>Next/Previous Team:</p>
-			<a href='?team_number={{team_num_previous}}'>❮</a>
-			<a href='?team_number={{team_num_next}}'>❯</a>
-		</div>
 		<h3>Team {{result.team_num}} Summary</h3>
+		<div class="container">
+			<div class="pagination">
+				<p>Next/Previous Team:</p>
+				<a href='?team_number={{team_num_previous}}'><img src="{% static '\img\arrow-left-bold.png' %}"></a>
+				<a href='?team_number={{team_num_next}}'><img src="{% static '\img\arrow-right-bold.png' %}"></a>
+			</div>
+		</div>
 		<br>
 		{# Autonomous stats #}
 		<div class="container">
