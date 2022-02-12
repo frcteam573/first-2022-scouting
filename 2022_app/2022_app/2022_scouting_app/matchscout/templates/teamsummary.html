@@ -3,11 +3,33 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+<style>
+	.pagination {
+		display: inline-block;
+		float: right;
+	}
 
+	.pagination a {
+		color: rgb(255, 255, 255);
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+		border: 1px solid #ddd;
+	}
+
+	.pagination a.active {
+		background-color: #4CAF50;
+		color: white;
+		border: 1px solid #4CAF50;
+	}
+
+	.pagination a:hover:not(.active) {
+		background-color: #ddd;
+	}
+</style>
 <section class="bar background-image-fixed-1 no-mb color-white">
 
 	<body>
-
 		<h1>Team Summary Page</h1>
 		{% if not search_run %}
 		<center>
@@ -22,6 +44,11 @@
 		{% else %}
 		{% for result in results %}
 		{% if forloop.first %}
+		<div class="pagination">
+			<p>Next/Previous Team:</p>
+			<a href='?team_number={{team_num_previous}}'>❮</a>
+			<a href='?team_number={{team_num_next}}'>❯</a>
+		</div>
 		<h3>Team {{result.team_num}} Summary</h3>
 		<br>
 		{# Autonomous stats #}
