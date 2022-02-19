@@ -5,13 +5,16 @@
 {% block content %}
 
 <section class="bar background-image-fixed-1 no-mb color-white">
-<body>
 
-<h1>Welcome To The 2022 Team 573 Scouting App</h1>
+    <body>
+        <h1>Welcome To The <span id="year"></span> Team 573 Scouting App</h1>
+        <!-- JS before /body -->
+        <script>
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
 
-{# We should probably add some how to instructions #}
+        {# We should probably add some how to instructions #}
 
-</body>
+    </body>
 </section>
 {% endblock %}
-
