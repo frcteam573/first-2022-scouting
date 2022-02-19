@@ -3,6 +3,10 @@
 
 install Python from [Download Python | Python.org](https://www.python.org/downloads/)
 
+# Getting started
+
+Either `git clone https://github.com/savage301/2022_Scouting_App_FRC_573.git` or [download the master branch](https://github.com/savage301/2022_Scouting_App_FRC_573/archive/refs/heads/master.zip)
+
 # Setting up Django environment
 
 `cd 2022_app\2022_app\`
