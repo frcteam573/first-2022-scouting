@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <style>
+        h2 {
+            font-size: 44px;
+        }
+        h3 {
+            text-align: left;
+        }
+        p {
+            font-size: 40px;
+        }
+        code {
+            font-size: 28px;
+        }
+    </style>
+</head>
+<section class="bar background-image-fixed-1 no-mb color-white">
+
+    <body>
+        <h1>Welcome To The <span id="year"></span> Team 573 Scouting App</h1>
+        <!-- JS before /body -->
+        <script>
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
+        <br>
+        <div class="col-sm-6">
+            {# We should probably add some how to instructions #}
+            <h2>
+                How-to
+            </h2>
+            <h3>Create Excel file from database</h3>
+            <strong>
+                <p>Make sure you have Python installed!</p>
+            </strong>
+            <p>Check if Python is present by opening up Comandline Promt and running:
+                <br>
+            </p>
+                <code>python --version</code>
+            <p>If Python is present, it should return something like:</p>
+            <code>python --version<br>Python 3.10.2</code>
+
+            <p>Run the following command in Commandline Prompt:</p>
+            <code>cd 2022_app\2022_app\2022_scouting_app\leaderscripts
+        <br>
+        python .\CreateExcelFile.py
+    </code>
+            <p>A ScoutingData_DATE.xlsx will be generated in the same directory.</p>
+        </div>
+    </body>
+</section>
+{% endblock %}

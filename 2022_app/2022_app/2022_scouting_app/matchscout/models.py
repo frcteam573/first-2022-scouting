@@ -27,7 +27,7 @@ class matchscout(models.Model):
 	t_lower = models.IntegerField(default = 0)
 	t_upper = models.IntegerField(default = 0)
 
-	ending_location = ((1, 'Zone 1'), (2, 'Zone 2'), (3, 'Zone 3'))
+	ending_location = ((1, 'Floor'), (2, 'Low Rung'), (3, 'Middle Rung'),(4, 'High Rung'), (5, 'Traversal Rung'))
 	t_ending = models.IntegerField(choices = ending_location, default = 1)
 
 	comments = models.TextField()

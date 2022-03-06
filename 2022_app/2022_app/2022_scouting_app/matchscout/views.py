@@ -9,6 +9,8 @@ from django.db.models import Avg, Max, Min, Q, Count
 def index(request):
     return render(request, 'index.html')
 
+def help(request):
+    return render(request, 'help.html')
 
 def matchscout_view(request):
     if request.method == 'POST':
